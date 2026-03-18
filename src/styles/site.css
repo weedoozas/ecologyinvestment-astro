@@ -1423,6 +1423,7 @@ a {
     linear-gradient(180deg, #223f2b 0%, #356444 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0;
 }
 
 .marketing-footer .eyebrow,
@@ -1606,7 +1607,6 @@ a {
     width: 122px;
   }
 
-  .marketing-footer,
   .glass-panel,
   .feature-card,
   .metric-card,
