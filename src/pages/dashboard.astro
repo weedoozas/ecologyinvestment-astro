@@ -12,51 +12,56 @@ import '../styles/site.css';
 	</head>
 	<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen">
 		<div class="flex min-h-screen">
-			<aside class="w-64 bg-gradient-to-b from-green-950 to-green-900 border-r border-green-800/30 fixed h-full flex flex-col p-4 gap-4" id="dashxSidebar">
+			<aside class="w-64 bg-gradient-to-b from-green-950 to-green-900 border-r border-green-800/30 fixed h-full flex flex-col p-4 gap-4 -translate-x-full md:translate-x-0 z-50" id="dashxSidebar">
 				<div class="flex items-center justify-between">
 					<a href="/" class="flex items-center gap-3">
 						<img src="/images/logos/logo-transparent.png" alt="Eco Negocios" class="w-9 h-9" />
-						<div>
+						<div class="hidden md:block">
 							<span class="block text-xs text-green-300 uppercase tracking-widest">Eco Negocios</span>
 							<strong class="block text-white">Dashboard</strong>
 						</div>
 					</a>
-					<button type="button" class="w-9 h-9 rounded-lg border border-white/10 bg-white/5 text-white" id="sidebarToggle">
+					<button type="button" class="w-9 h-9 rounded-lg border border-white/10 bg-white/5 text-white md:hidden" id="sidebarToggle">
 						<i class="bi bi-list"></i>
 					</button>
 				</div>
 
 				<nav class="flex flex-col gap-2 mt-4" id="investorNav">
-					<a href="#overview" class="sidebar-btn active"><i class="bi bi-grid-1x2 mr-2"></i>Resumen</a>
-					<a href="#deposits" class="sidebar-btn"><i class="bi bi-plus-circle mr-2"></i>Deposito</a>
-					<a href="#withdrawals" class="sidebar-btn"><i class="bi bi-arrow-up-circle mr-2"></i>Retiro</a>
+					<a href="#overview" class="sidebar-btn active"><i class="bi bi-grid-1x2 mr-2"></i><span class="hidden md:inline">Resumen</span></a>
+					<a href="#deposits" class="sidebar-btn"><i class="bi bi-plus-circle mr-2"></i><span class="hidden md:inline">Deposito</span></a>
+					<a href="#withdrawals" class="sidebar-btn"><i class="bi bi-arrow-up-circle mr-2"></i><span class="hidden md:inline">Retiro</span></a>
 				</nav>
 
 				<nav class="flex flex-col gap-2 mt-4 hidden" id="adminNav">
-					<button type="button" class="sidebar-btn active" data-admin-tab="transactions"><i class="bi bi-receipt mr-2"></i>Transacciones</button>
-					<button type="button" class="sidebar-btn" data-admin-tab="graphics"><i class="bi bi-graph-up mr-2"></i>Graficos</button>
-					<button type="button" class="sidebar-btn" data-admin-tab="beneficiaries"><i class="bi bi-people mr-2"></i>Beneficiarios</button>
+					<button type="button" class="sidebar-btn active" data-admin-tab="transactions"><i class="bi bi-receipt mr-2"></i><span class="hidden md:inline">Transacciones</span></button>
+					<button type="button" class="sidebar-btn" data-admin-tab="graphics"><i class="bi bi-graph-up mr-2"></i><span class="hidden md:inline">Graficos</span></button>
+					<button type="button" class="sidebar-btn" data-admin-tab="beneficiaries"><i class="bi bi-people mr-2"></i><span class="hidden md:inline">Beneficiarios</span></button>
 				</nav>
 
 				<div class="flex flex-col gap-2 mt-auto">
-					<button type="button" class="sidebar-btn" id="switchInvestor"><i class="bi bi-person mr-2"></i>Demo Cuenta cliente</button>
-					<button type="button" class="sidebar-btn" id="switchAdmin"><i class="bi bi-shield-check mr-2"></i>Demo Cuenta administradora</button>
+					<button type="button" class="sidebar-btn" id="switchInvestor"><i class="bi bi-person mr-2"></i><span class="hidden md:inline">Demo Cuenta cliente</span></button>
+					<button type="button" class="sidebar-btn" id="switchAdmin"><i class="bi bi-shield-check mr-2"></i><span class="hidden md:inline">Demo Cuenta administradora</span></button>
 				</div>
 			</aside>
 
-			<div class="fixed inset-0 bg-black/20 z-40 hidden" id="dashxOverlay"></div>
+			<div class="fixed inset-0 bg-black/20 z-40 hidden md:hidden" id="dashxOverlay"></div>
 
-			<main class="flex-1 ml-64 p-6">
-				<header class="flex items-center justify-between mb-6">
-					<div>
-						<p class="text-xs text-green-600 uppercase tracking-widest font-bold">Cuenta</p>
-						<h1 class="text-xl font-bold text-green-900" id="dashboardTitle">Resumen</h1>
-					</div>
+			<main class="flex-1 md:ml-64 p-4 md:p-6 w-full">
+				<header class="flex items-center justify-between mb-4 md:mb-6">
 					<div class="flex items-center gap-3">
-						<span class="px-3 py-1 rounded-full bg-white border border-green-200 text-green-700 text-sm font-bold">Activo</span>
+						<button type="button" class="md:hidden w-10 h-10 rounded-lg bg-white border border-green-200 shadow flex items-center justify-center text-green-900" id="mobileMenuBtn">
+							<i class="bi bi-list text-xl"></i>
+						</button>
+						<div>
+							<p class="text-xs text-green-600 uppercase tracking-widest font-bold">Cuenta</p>
+							<h1 class="text-lg md:text-xl font-bold text-green-900" id="dashboardTitle">Resumen</h1>
+						</div>
+					</div>
+					<div class="flex items-center gap-2 md:gap-3">
+						<span class="px-2 md:px-3 py-1 rounded-full bg-white border border-green-200 text-green-700 text-xs md:text-sm font-bold">Activo</span>
 						<div class="relative" id="userMenu">
-							<button type="button" class="w-10 h-10 rounded-full bg-white border border-green-200 shadow-lg flex items-center justify-center text-green-900" id="userButton">
-								<i class="bi bi-person-circle text-xl"></i>
+							<button type="button" class="w-9 md:w-10 h-9 md:h-10 rounded-full bg-white border border-green-200 shadow-lg flex items-center justify-center text-green-900" id="userButton">
+								<i class="bi bi-person-circle text-lg md:text-xl"></i>
 							</button>
 							<div class="absolute right-0 top-full mt-2 w-48 bg-white rounded-xl border border-green-100 shadow-xl hidden" id="userDropdown">
 								<div class="p-3 border-b border-green-100">

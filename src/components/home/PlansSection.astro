@@ -2,62 +2,54 @@
 import '../../styles/home/plans.css';
 ---
 
-<section class="section-stack section-block section-plans-band" data-reveal>
+<section class="section-stack section-block section-plans-band relative overflow-hidden" data-reveal>
   <div class="plans-atmosphere" aria-hidden="true">
     <span class="wind-streak wind-streak-1"></span>
     <span class="wind-streak wind-streak-2"></span>
     <span class="wind-streak wind-streak-3"></span>
-    <div class="windmill-ornament">
-      <span class="windmill-mast"></span>
-      <span class="windmill-hub"></span>
-      <span class="windmill-rotor">
-        <span class="windmill-arm blade-a"><span class="windmill-blade"></span></span>
-        <span class="windmill-arm blade-b"><span class="windmill-blade"></span></span>
-        <span class="windmill-arm blade-c"><span class="windmill-blade"></span></span>
-      </span>
-    </div>
   </div>
 
-  <div class="section-heading narrow">
+  <div class="section-heading narrow text-center mb-8">
     <p class="section-kicker">Planes de inversión</p>
-    <h2>Planes diseñados para distintos niveles de inversión</h2>
+    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">Planes diseñados para distintos niveles de inversión</h2>
   </div>
 
-  <div class="plan-grid investment-grid">
-    <article class="plan-card low investment-card">
-      <i class="bi bi-tree-fill section-symbol"></i>
-      <p class="plan-label">Eco-Básico (VIP 1)</p>
-      <h3>$40.00 - $200.00 USD.</h3>
-      <strong>25% Diario</strong>
-      <ul class="spec-list">
-        <li>Acceso inicial al portafolio sostenible</li>
-        <li>Panel de seguimiento incluido</li>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+    <article class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-white">
+      <i class="bi bi-tree-fill text-3xl mb-4 block"></i>
+      <p class="text-sm text-green-200 uppercase tracking-wider font-bold mb-2">Eco-Básico (VIP 1)</p>
+      <h3 class="text-xl md:text-2xl font-bold mb-2">$40 - $200 USD</h3>
+      <p class="text-lg text-green-300 font-bold mb-4">25% Diario</p>
+      <ul class="space-y-2 mb-6 text-sm text-gray-200">
+        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Acceso inicial al portafolio</li>
+        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Panel de seguimiento incluido</li>
       </ul>
-      <a class="primary-button plan-cta" href="/planes">Elegir plan</a>
+      <a class="block text-center px-6 py-3 bg-green-500 hover:bg-green-600 rounded-full font-bold text-white transition" href="/planes">Elegir plan</a>
     </article>
 
-    <article class="plan-card mid investment-card featured-plan">
-      <i class="bi bi-bar-chart-fill section-symbol"></i>
-      <p class="plan-label">Eco-Pro (VIP 2)</p>
-      <h3>$400.00 - $800.00 USD.</h3>
-      <strong>25% Diario</strong>
-      <ul class="spec-list">
-        <li>Mayor participación en proyectos</li>
-        <li>Prioridad en nuevos proyectos</li>
+    <article class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border-2 border-green-400 text-white relative md:-mt-4 md:mb-4">
+      <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">Más popular</span>
+      <i class="bi bi-bar-chart-fill text-3xl mb-4 block"></i>
+      <p class="text-sm text-green-200 uppercase tracking-wider font-bold mb-2">Eco-Pro (VIP 2)</p>
+      <h3 class="text-xl md:text-2xl font-bold mb-2">$400 - $800 USD</h3>
+      <p class="text-lg text-green-300 font-bold mb-4">25% Diario</p>
+      <ul class="space-y-2 mb-6 text-sm text-gray-200">
+        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Mayor participación en proyectos</li>
+        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Prioridad en nuevos proyectos</li>
       </ul>
-      <a class="primary-button plan-cta" href="/planes">Elegir plan</a>
+      <a class="block text-center px-6 py-3 bg-green-400 hover:bg-green-500 rounded-full font-bold text-gray-900 transition" href="/planes">Elegir plan</a>
     </article>
 
-    <article class="plan-card high investment-card">
-      <i class="bi bi-shield-check section-symbol"></i>
-      <p class="plan-label">Eco-Elite (VIP 3)</p>
-      <h3>$1500.00 USD - $3000.00</h3>
-      <strong>25% Diario</strong>
-      <ul class="spec-list">
-        <li>Acceso a oportunidades exclusivas</li>
-        <li>Soporte personalizado</li>
+    <article class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-white">
+      <i class="bi bi-shield-check text-3xl mb-4 block"></i>
+      <p class="text-sm text-green-200 uppercase tracking-wider font-bold mb-2">Eco-Elite (VIP 3)</p>
+      <h3 class="text-xl md:text-2xl font-bold mb-2">$1500 - $3000 USD</h3>
+      <p class="text-lg text-green-300 font-bold mb-4">25% Diario</p>
+      <ul class="space-y-2 mb-6 text-sm text-gray-200">
+        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Oportunidades exclusivas</li>
+        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Soporte personalizado</li>
       </ul>
-      <a class="primary-button plan-cta" href="/planes">Elegir plan</a>
+      <a class="block text-center px-6 py-3 bg-green-500 hover:bg-green-600 rounded-full font-bold text-white transition" href="/planes">Elegir plan</a>
     </article>
   </div>
 </section>
