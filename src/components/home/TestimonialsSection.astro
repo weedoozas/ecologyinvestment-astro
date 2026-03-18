@@ -23,24 +23,26 @@ const testimonials = [
 ];
 ---
 
-<section class="section-stack testimonials-section section-block section-plain" data-reveal>
-  <div class="section-heading narrow">
-    <p class="section-kicker">Testimonios</p>
-    <h2>Experiencias reales de personas que ya confiaron en la plataforma</h2>
-  </div>
+<section class="py-12 md:py-16 lg:py-20 px-4 bg-white" data-reveal>
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-8 md:mb-12">
+      <p class="text-sm text-green-600 uppercase tracking-wider font-bold mb-2">Testimonios</p>
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Experiencias reales de personas que ya confiaron en la plataforma</h2>
+    </div>
 
-  <div class="testimonial-showcase">
-    {testimonials.map((item) => (
-      <article class="testimonial-card-v2">
-        <div class="testimonial-person">
-          <img src={item.image} alt={item.name} class="testimonial-avatar" />
-          <div>
-            <strong>{item.name}</strong>
-            <span>Inversor activo</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      {testimonials.map((item) => (
+        <article class="bg-gradient-to-b from-white to-green-50 rounded-2xl p-5 md:p-6 shadow-lg border border-green-100">
+          <div class="flex items-center gap-3 mb-4">
+            <img src={item.image} alt={item.name} class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-green-200" />
+            <div>
+              <strong class="block text-gray-900">{item.name}</strong>
+              <span class="text-sm text-gray-500">Inversor activo</span>
+            </div>
           </div>
-        </div>
-        <p>{item.quote}</p>
-      </article>
-    ))}
+          <p class="text-gray-600 text-sm md:text-base leading-relaxed">{item.quote}</p>
+        </article>
+      ))}
+    </div>
   </div>
 </section>

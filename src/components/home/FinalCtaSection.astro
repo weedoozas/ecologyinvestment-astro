@@ -2,15 +2,13 @@
 import '../../styles/home/final-cta.css';
 ---
 
-<section class="cta-band section-block section-cta cta-band-immersive" data-reveal>
-  <div>
-    <h2>Empieza hoy a invertir con propósito</h2>
-    <p class="section-copy">
-      Forma parte de una nueva generación de inversores que buscan impacto y crecimiento.
-    </p>
-  </div>
-  <div class="button-row">
-    <a class="ghost-button" href="/login">Crear cuenta</a>
-    <a class="primary-button" href="/planes">Empezar a invertir</a>
+<section class="py-12 md:py-16 lg:py-20 px-4 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(180deg, rgba(34, 63, 43, 0.85), rgba(53, 100, 68, 0.75)), url('/images/earth.png');" data-reveal>
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">Empieza hoy a invertir con propósito</h2>
+    <p class="text-gray-200 text-base md:text-lg mb-6 md:mb-8">Forma parte de una nueva generación de inversores que buscan impacto y crecimiento.</p>
+    <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+      <a href="/login" class="px-6 md:px-8 py-3 rounded-full border border-white/30 bg-white/10 text-white font-semibold hover:bg-white/20 transition text-sm md:text-base">Crear cuenta</a>
+      <a href="/planes" class="px-6 md:px-8 py-3 rounded-full bg-gradient-to-r from-green-500 to-emerald-400 text-white font-bold hover:from-green-600 hover:to-emerald-500 transition text-sm md:text-base shadow-lg">Empezar a invertir</a>
+    </div>
   </div>
 </section>

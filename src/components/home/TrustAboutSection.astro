@@ -2,43 +2,40 @@
 import '../../styles/home/trust-about.css';
 ---
 
-<section class="section-stack section-block section-trust-about" data-reveal>
-  <div class="trust-about-grid">
-    <div class="trust-about-copy">
-      <p class="section-kicker">Quiénes somos</p>
-      <h2>Sobre Eco Negocios & Inversiones</h2>
-      <div class="section-copy flow-copy">
-        <p>Eco Negocios & Inversiones es una plataforma de gestión de activos dedicada a conectar el capital privado con proyectos de infraestructura de energía renovable en todo el mundo. Creemos que el crecimiento económico debe ir de la mano con el cuidado del medio ambiente.</p>
-        <p><strong>Nuestra Misión:</strong> Democratizar el acceso a inversiones de alto rendimiento mediante el financiamiento de plantas solares y parques eólicos.</p>
-        <p><strong>Seguridad y Confianza:</strong> Operamos con total transparencia en la gestión de capitales, garantizando que cada dólar invertido contribuya a un planeta más limpio y a una billetera más sólida para nuestros usuarios.</p>
-      </div>
-      <a class="ghost-button" href="/sobre-nosotros">Conocer más</a>
-    </div>
-
-    <div class="trust-about-media compact-trust-panel">
-      <img src="/images/solar_project.jpg" alt="Proyecto solar sostenible" class="trust-about-image" />
-      <div class="trust-about-overlay">
-        <p class="section-kicker">Confianza</p>
-        <h3>Transparencia, compromiso y visión de futuro</h3>
-        <div class="section-copy compact-copy">
-          <p>
-            Nuestro enfoque se basa en conectar capital con proyectos reales y sostenibles,
-            priorizando la transparencia, la trazabilidad y el impacto ambiental positivo.
-          </p>
+<section class="py-12 md:py-16 lg:py-20 px-4 bg-gradient-to-b from-gray-50 to-green-50" data-reveal>
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <div>
+        <p class="text-sm text-green-600 uppercase tracking-wider font-bold mb-2">Quiénes somos</p>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Sobre Eco Negocios & Inversiones</h2>
+        <div class="space-y-4 text-gray-600">
+          <p>Eco Negocios & Inversiones es una plataforma de gestión de activos dedicada a conectar el capital privado con proyectos de infraestructura de energía renovable en todo el mundo. Creemos que el crecimiento económico debe ir de la mano con el cuidado del medio ambiente.</p>
+          <p><strong>Nuestra Misión:</strong> Democratizar el acceso a inversiones de alto rendimiento mediante el financiamiento de plantas solares y parques eólicos.</p>
+          <p><strong>Seguridad y Confianza:</strong> Operamos con total transparencia en la gestión de capitales, garantizando que cada dólar invertido contribuya a un planeta más limpio y a una billetera más sólida para nuestros usuarios.</p>
         </div>
-        <div class="compact-trust-list">
-          <article class="compact-trust-item">
-            <i class="bi bi-lightning-charge section-symbol"></i>
-            <span>Proyectos enfocados en energías renovables</span>
-          </article>
-          <article class="compact-trust-item">
-            <i class="bi bi-recycle section-symbol"></i>
-            <span>Modelo basado en economía sostenible</span>
-          </article>
-          <article class="compact-trust-item">
-            <i class="bi bi-pc-display-horizontal section-symbol"></i>
-            <span>Plataforma digital de seguimiento</span>
-          </article>
+        <a href="/sobre-nosotros" class="inline-block mt-4 md:mt-6 px-6 py-3 rounded-full border border-green-200 bg-white text-green-700 font-semibold hover:bg-green-50 transition">Conocer más</a>
+      </div>
+
+      <div class="relative rounded-2xl overflow-hidden h-full min-h-[400px] lg:min-h-[500px]">
+        <img src="/images/solar_project.jpg" alt="Proyecto solar sostenible" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent p-5 md:p-6 flex flex-col justify-end">
+          <p class="text-green-300 text-sm font-bold uppercase tracking-wider mb-2">Confianza</p>
+          <h3 class="text-white text-xl md:text-2xl font-bold mb-3">Transparencia, compromiso y visión de futuro</h3>
+          <p class="text-gray-200 text-sm mb-4">Nuestro enfoque se basa en conectar capital con proyectos reales y sostenibles, priorizando la transparencia, la trazabilidad y el impacto ambiental positivo.</p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-white text-sm">
+              <i class="bi bi-lightning-charge text-green-300"></i>
+              <span>Proyectos enfocados en energías renovables</span>
+            </div>
+            <div class="flex items-center gap-2 text-white text-sm">
+              <i class="bi bi-recycle text-green-300"></i>
+              <span>Modelo basado en economía sostenible</span>
+            </div>
+            <div class="flex items-center gap-2 text-white text-sm">
+              <i class="bi bi-pc-display-horizontal text-green-300"></i>
+              <span>Plataforma digital de seguimiento</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

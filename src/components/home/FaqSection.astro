@@ -2,53 +2,55 @@
 import '../../styles/home/faq.css';
 ---
 
-<section class="section-stack faq-section section-block section-soft" data-reveal>
-  <div class="section-heading narrow">
-    <p class="section-kicker">FAQ</p>
-    <h2>Preguntas frecuentes</h2>
-  </div>
+<section class="py-12 md:py-16 lg:py-20 px-4 bg-gradient-to-b from-green-50 to-white" data-reveal>
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-8 md:mb-12">
+      <p class="text-sm text-green-600 uppercase tracking-wider font-bold mb-2">FAQ</p>
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Preguntas frecuentes</h2>
+    </div>
 
-  <div class="faq-list faq-accordion-list">
-    <details class="faq-accordion" open>
-      <summary>
-        <span class="faq-summary-meta">
-          <i class="bi bi-cash-coin faq-icon"></i>
-          <span class="plan-label">01</span>
-        </span>
-        <span class="faq-question">¿Cómo se generan mis ganancias diarias?</span>
-        <i class="bi bi-chevron-down faq-toggle"></i>
-      </summary>
-      <div class="faq-answer">
-        <p>Sus beneficios provienen del financiamiento directo que EcoNegocios realiza en proyectos de energía renovable (solar y eólica). El flujo de caja generado por la venta de energía limpia se distribuye proporcionalmente entre nuestros socios inversores de forma automática cada 24 horas.</p>
-      </div>
-    </details>
+    <div class="space-y-3 md:space-y-4">
+      <details class="faq-accordion bg-white rounded-xl md:rounded-2xl shadow-md border border-green-100 overflow-hidden" open>
+        <summary class="flex items-center gap-3 md:gap-4 p-4 md:p-5 cursor-pointer list-none">
+          <span class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-700 flex-shrink-0">
+            <i class="bi bi-cash-coin"></i>
+          </span>
+          <span class="text-green-600 font-bold text-xs flex-shrink-0">01</span>
+          <span class="font-semibold text-gray-900 flex-1 text-sm md:text-base">¿Cómo se generan mis ganancias diarias?</span>
+          <i class="bi bi-chevron-down text-green-600 flex-shrink-0"></i>
+        </summary>
+        <div class="px-4 md:px-5 pb-4 md:pb-5">
+          <p class="text-gray-600 text-sm md:text-base">Sus beneficios provienen del financiamiento directo que EcoNegocios realiza en proyectos de energía renovable (solar y eólica). El flujo de caja generado por la venta de energía limpia se distribuye proporcionalmente entre nuestros socios inversores de forma automática cada 24 horas.</p>
+        </div>
+      </details>
 
-    <details class="faq-accordion">
-      <summary>
-        <span class="faq-summary-meta">
-          <i class="bi bi-wallet2 faq-icon"></i>
-          <span class="plan-label">02</span>
-        </span>
-        <span class="faq-question">¿Cuál es el monto mínimo para invertir y retirar?</span>
-        <i class="bi bi-chevron-down faq-toggle"></i>
-      </summary>
-      <div class="faq-answer">
-        <p>Puede comenzar a invertir desde $10.00 USD activando el Plan Eco-Básico. Los retiros de ganancias pueden solicitarse en cualquier momento una vez alcanzado el mínimo establecido en su panel de usuario, y se procesan directamente a su cuenta bancaria registrada.</p>
-      </div>
-    </details>
+      <details class="faq-accordion bg-white rounded-xl md:rounded-2xl shadow-md border border-green-100 overflow-hidden">
+        <summary class="flex items-center gap-3 md:gap-4 p-4 md:p-5 cursor-pointer list-none">
+          <span class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-700 flex-shrink-0">
+            <i class="bi bi-wallet2"></i>
+          </span>
+          <span class="text-green-600 font-bold text-xs flex-shrink-0">02</span>
+          <span class="font-semibold text-gray-900 flex-1 text-sm md:text-base">¿Cuál es el monto mínimo para invertir y retirar?</span>
+          <i class="bi bi-chevron-down text-green-600 flex-shrink-0"></i>
+        </summary>
+        <div class="px-4 md:px-5 pb-4 md:pb-5">
+          <p class="text-gray-600 text-sm md:text-base">Puede comenzar a invertir desde $10.00 USD activando el Plan Eco-Básico. Los retiros de ganancias pueden solicitarse en cualquier momento una vez alcanzado el mínimo establecido en su panel de usuario, y se procesan directamente a su cuenta bancaria registrada.</p>
+        </div>
+      </details>
 
-    <details class="faq-accordion">
-      <summary>
-        <span class="faq-summary-meta">
-          <i class="bi bi-shield-check faq-icon"></i>
-          <span class="plan-label">03</span>
-        </span>
-        <span class="faq-question">¿Qué tan seguras son mis inversiones en la plataforma?</span>
-        <i class="bi bi-chevron-down faq-toggle"></i>
-      </summary>
-      <div class="faq-answer">
-        <p>Priorizamos la transparencia y la seguridad financiera. Al estar respaldados por activos físicos reales (infraestructura energética), su capital cuenta con un sustento tangible que garantiza la sostenibilidad del retorno de inversión a largo plazo.</p>
-      </div>
-    </details>
+      <details class="faq-accordion bg-white rounded-xl md:rounded-2xl shadow-md border border-green-100 overflow-hidden">
+        <summary class="flex items-center gap-3 md:gap-4 p-4 md:p-5 cursor-pointer list-none">
+          <span class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-700 flex-shrink-0">
+            <i class="bi bi-shield-check"></i>
+          </span>
+          <span class="text-green-600 font-bold text-xs flex-shrink-0">03</span>
+          <span class="font-semibold text-gray-900 flex-1 text-sm md:text-base">¿Qué tan seguras son mis inversiones en la plataforma?</span>
+          <i class="bi bi-chevron-down text-green-600 flex-shrink-0"></i>
+        </summary>
+        <div class="px-4 md:px-5 pb-4 md:pb-5">
+          <p class="text-gray-600 text-sm md:text-base">Priorizamos la transparencia y la seguridad financiera. Al estar respaldados por activos físicos reales (infraestructura energética), su capital cuenta con un sustento tangible que garantiza la sostenibilidad del retorno de inversión a largo plazo.</p>
+        </div>
+      </details>
+    </div>
   </div>
 </section>
