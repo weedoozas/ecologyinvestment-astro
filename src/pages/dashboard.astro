@@ -194,7 +194,7 @@ import '../styles/site.css';
 										<span class="text-green-600 text-sm" id="depositFileName">Subir imagen</span>
 									</label>
 								</div>
-								<div id="depositPreview" class="hidden mt-2 relative inline-block">
+								<div id="depositPreview" style="display: none;" class="mt-2 relative inline-block">
 									<img id="depositPreviewImg" class="w-24 h-24 object-cover rounded-lg border border-green-200" />
 									<button type="button" id="depositRemoveImg" class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-xs hover:bg-red-600">&times;</button>
 								</div>
@@ -590,25 +590,29 @@ import '../styles/site.css';
 			const depositPreviewImg = document.getElementById('depositPreviewImg');
 			const depositRemoveImg = document.getElementById('depositRemoveImg');
 
-			depositFileInput?.addEventListener('change', function() {
+			if (depositFileInput) {
+			depositFileInput.addEventListener('change', function() {
 				const file = this.files[0];
 				if (file) {
 					depositFileName.textContent = file.name;
 					const reader = new FileReader();
 					reader.onload = function(e) {
 						depositPreviewImg.src = e.target.result;
-						depositPreview.classList.remove('hidden');
+						if (depositPreview) depositPreview.style.display = 'inline-block';
 					};
 					reader.readAsDataURL(file);
 				}
 			});
+			}
 
-			depositRemoveImg?.addEventListener('click', function() {
-				depositFileInput.value = '';
-				depositFileName.textContent = 'Subir imagen';
-				depositPreview.classList.add('hidden');
-				depositPreviewImg.src = '';
+			if (depositRemoveImg) {
+			depositRemoveImg.addEventListener('click', function() {
+				if (depositFileInput) depositFileInput.value = '';
+				if (depositFileName) depositFileName.textContent = 'Subir imagen';
+				if (depositPreview) depositPreview.style.display = 'none';
+				if (depositPreviewImg) depositPreviewImg.src = '';
 			});
+			}
 
 			document.getElementById('depositForm')?.addEventListener('submit', async (e) => {
 				e.preventDefault();
