@@ -1445,10 +1445,12 @@ a {
 
 .footer-legal-bar {
   width: 100%;
-  padding: 12px 18px 0;
+  padding: 16px 18px;
   text-align: center;
   font-size: 0.84rem;
   color: rgba(12, 23, 15, 0.8);
+  background: #1a1a1a;
+  color: #f4fbfc;
 }
 
 .whatsapp-float {
