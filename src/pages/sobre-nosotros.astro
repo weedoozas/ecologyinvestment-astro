@@ -1,0 +1,45 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { company } from '../data/site.js';
+---
+
+<MarketingLayout
+  title={`Sobre nosotros | ${company.name}`}
+  description={company.about}
+  currentPath="/sobre-nosotros"
+>
+  <main class="section-stack">
+    <section class="page-hero glass-panel">
+      <p class="section-kicker">Sobre nosotros</p>
+      <h1 class="page-title">Quienes somos</h1>
+      <p class="hero-text">{company.about}</p>
+      <div class="info-hero-media">
+        <img src="/images/wind-farm.jpg" alt="Parque eolico de referencia" class="about-hero-photo" />
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="info-card">
+        <img src="/images/illustrations/graph-up-arrow.svg" alt="Crecimiento" class="section-icon" />
+        <p class="section-kicker">Nuestra mision</p>
+        <h2>Democratizar el acceso a inversiones de alto rendimiento.</h2>
+        <p>{company.mission}</p>
+      </article>
+      <article class="info-card feature-card tint">
+        <img src="/images/illustrations/shield-check.svg" alt="Seguridad" class="section-icon" />
+        <p class="section-kicker">Seguridad y confianza</p>
+        <h2>Transparencia en la gestion de capitales.</h2>
+        <p>{company.trust}</p>
+      </article>
+      <article class="info-card">
+        <img src="/images/illustrations/wind.svg" alt="Parques eolicos" class="section-icon" />
+        <p class="section-kicker">Enfoque</p>
+        <h2>Plantas solares y parques eolicos.</h2>
+        <p>
+          Nuestra narrativa y estructura comercial se enfocan en proyectos que combinan crecimiento economico
+          con impacto positivo para el medio ambiente.
+        </p>
+      </article>
+    </section>
+  </main>
+</MarketingLayout>

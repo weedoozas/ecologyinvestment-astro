@@ -1,0 +1,46 @@
+---
+import '../../styles/home/testimonials.css';
+
+const testimonials = [
+  {
+    name: 'Carlos M.',
+    image: '/images/testimonials/youngman.png',
+    quote:
+      'Al principio tenía dudas, pero después de activar mi primer plan de $100, empecé a ver los intereses del 3.0% en mi saldo cada mañana sin falta. Ya he realizado tres retiros exitosos directamente a mi cuenta. Es una excelente forma de hacer crecer los ahorros mientras apoyamos la energía limpia.'
+  },
+  {
+    name: 'Elena R.',
+    image: '/images/testimonials/girl.png',
+    quote:
+      'Lo que más me gusta de EcoNegocios es la transparencia. El panel de usuario es muy fácil de usar y puedo ver cómo mi capital genera rendimientos diarios. Empecé con el mínimo de $10 y ahora ya estoy reinvirtiendo mis ganancias para subir de nivel.'
+  },
+  {
+    name: 'Jorge L.',
+    image: '/images/testimonials/man.jpg',
+    quote:
+      'He probado muchas plataformas, pero ninguna con la solidez de EcoNegocios. Saber que mi dinero está respaldado por proyectos de paneles solares reales me da la tranquilidad que buscaba. El soporte al cliente es rápido y los pagos son puntuales.'
+  }
+];
+---
+
+<section class="section-stack testimonials-section section-block section-plain" data-reveal>
+  <div class="section-heading narrow">
+    <p class="section-kicker">Testimonios</p>
+    <h2>Experiencias reales de personas que ya confiaron en la plataforma</h2>
+  </div>
+
+  <div class="testimonial-showcase">
+    {testimonials.map((item) => (
+      <article class="testimonial-card-v2">
+        <div class="testimonial-person">
+          <img src={item.image} alt={item.name} class="testimonial-avatar" />
+          <div>
+            <strong>{item.name}</strong>
+            <span>Inversor activo</span>
+          </div>
+        </div>
+        <p>{item.quote}</p>
+      </article>
+    ))}
+  </div>
+</section>

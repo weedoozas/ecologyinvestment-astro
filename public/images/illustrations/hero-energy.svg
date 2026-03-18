@@ -1,0 +1,32 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="720" rx="40" fill="url(#bg)"/>
+  <circle cx="774" cy="145" r="52" fill="#F6FF9E"/>
+  <path d="M0 493C128 434 223 420 348 441C473 462 574 569 699 569C805 569 883 527 960 469V720H0V493Z" fill="#0B5F58"/>
+  <path d="M0 537C149 466 252 478 355 512C471 551 560 627 677 627C788 627 862 590 960 545V720H0V537Z" fill="#084B4F"/>
+  <path d="M172 490L330 432L435 598H81L172 490Z" fill="#103B4E"/>
+  <path d="M173 487L332 429L438 596H263L173 487Z" fill="#19596B"/>
+  <path d="M334 430L492 372L597 596H441L334 430Z" fill="#103B4E"/>
+  <path d="M335 427L494 369L600 596H425L335 427Z" fill="#1E6D7A"/>
+  <rect x="172" y="490" width="10" height="108" fill="#87D3C4"/>
+  <rect x="334" y="430" width="10" height="168" fill="#87D3C4"/>
+  <rect x="647" y="246" width="15" height="296" rx="7.5" fill="#EAF8F3"/>
+  <circle cx="654.5" cy="229.5" r="32.5" fill="#EAF8F3"/>
+  <path d="M654 229L606 212C608 193 618 179 635 169L654 229Z" fill="#B8EFE1"/>
+  <path d="M655 229L675 170C695 177 708 193 711 212L655 229Z" fill="#D9F7EF"/>
+  <path d="M655 229L709 247C705 266 692 279 674 288L655 229Z" fill="#9EE0D0"/>
+  <rect x="754" y="198" width="13" height="344" rx="6.5" fill="#EAF8F3"/>
+  <circle cx="760.5" cy="178.5" r="29.5" fill="#EAF8F3"/>
+  <path d="M760 178L717 163C720 146 729 133 744 124L760 178Z" fill="#B8EFE1"/>
+  <path d="M761 178L779 125C796 131 808 145 811 163L761 178Z" fill="#D9F7EF"/>
+  <path d="M761 178L811 194C808 211 797 223 780 231L761 178Z" fill="#9EE0D0"/>
+  <rect x="84" y="88" width="290" height="110" rx="22" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="116" y="132" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">Infraestructura sostenible</text>
+  <text x="116" y="170" fill="#D9F7EF" font-family="Arial, sans-serif" font-size="20">Capital privado orientado a energia renovable</text>
+  <defs>
+    <linearGradient id="bg" x1="119" y1="77" x2="806" y2="682" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A4E57"/>
+      <stop offset="0.5" stop-color="#0F8A6C"/>
+      <stop offset="1" stop-color="#1567A8"/>
+    </linearGradient>
+  </defs>
+</svg>

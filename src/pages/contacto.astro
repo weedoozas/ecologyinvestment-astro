@@ -1,0 +1,53 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { company } from '../data/site.js';
+---
+
+<MarketingLayout
+  title={`Contacto | ${company.name}`}
+  description={`Contacto, ubicacion, telefono y email de ${company.name}.`}
+  currentPath="/contacto"
+>
+  <main class="section-stack">
+    <section class="page-hero glass-panel">
+      <p class="section-kicker">Contactanos</p>
+      <h1 class="page-title">Estamos listos para conversar</h1>
+      <p class="hero-text">
+        Si quieres avanzar con la demo, compartir branding o coordinar la siguiente iteracion, aqui estan los datos base.
+      </p>
+      <div class="info-hero-media compact">
+        <img src="/images/logos/logo-transparent.png" alt="Logo sin fondo" class="hero-logo-transparent" />
+        <img src="/images/illustrations/cash-stack.svg" alt="Gestion financiera" class="illustration-badge large" />
+      </div>
+    </section>
+
+    <section class="contact-grid">
+      <article class="contact-card">
+        <p class="section-kicker">Ubicacion</p>
+        <strong>{company.location}</strong>
+        <p>Ecuador</p>
+      </article>
+      <article class="contact-card">
+        <p class="section-kicker">Telefono</p>
+        <strong>{company.phone}</strong>
+        <p>Contacto comercial principal</p>
+      </article>
+      <article class="contact-card">
+        <p class="section-kicker">Email</p>
+        <strong>{company.email}</strong>
+        <p>Canal directo para material, consultas y coordinacion</p>
+      </article>
+    </section>
+
+    <section class="cta-band">
+      <div>
+        <p class="section-kicker">Siguiente paso</p>
+        <h2>Combina estas paginas con el login demo y ya tienes una base comercial completa.</h2>
+      </div>
+      <div class="button-row">
+        <a class="primary-button" href="/login">Ir al login demo</a>
+        <a class="ghost-button" href="/planes">Revisar planes</a>
+      </div>
+    </section>
+  </main>
+</MarketingLayout>

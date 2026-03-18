@@ -1,0 +1,122 @@
+.section-trust-about {
+  background:
+    radial-gradient(circle at top left, rgba(95, 177, 121, 0.08), transparent 22%),
+    linear-gradient(180deg, rgba(248, 252, 255, 0.98), rgba(244, 249, 247, 0.96));
+}
+
+.trust-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  gap: 36px;
+  width: 100%;
+}
+
+.trust-about-copy {
+  display: grid;
+  gap: 24px;
+}
+
+.trust-about-copy .ghost-button {
+  width: fit-content;
+}
+
+.compact-trust-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  border-radius: 28px;
+  box-shadow: 0 20px 48px rgba(12, 65, 86, 0.08);
+}
+
+.trust-about-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  object-fit: cover;
+}
+
+.trust-about-overlay {
+  position: absolute;
+  inset: auto 22px 22px 22px;
+  padding: 22px 22px 20px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(34, 63, 43, 0.84), rgba(53, 100, 68, 0.68));
+  backdrop-filter: blur(14px);
+}
+
+.trust-about-overlay .section-kicker,
+.trust-about-overlay h3,
+.trust-about-overlay .section-copy,
+.trust-about-overlay .compact-copy,
+.trust-about-overlay .compact-copy p,
+.compact-trust-item span {
+  color: #f4fbfc;
+}
+
+.trust-about-overlay h3 {
+  margin: 8px 0 14px;
+  font-family: "Plus Jakarta Sans", "Manrope", sans-serif;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.08;
+}
+
+.compact-copy p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.compact-trust-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.compact-trust-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.compact-trust-item .section-symbol {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 1.15rem;
+  color: #d7efe0;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.light-ghost {
+  margin-top: 18px;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: #f4fbfc;
+}
+
+@media (max-width: 1024px) {
+  .trust-about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .trust-about-overlay {
+    padding: 20px 18px;
+    border-radius: 22px;
+  }
+
+  .trust-about-copy .ghost-button {
+    width: 100%;
+  }
+
+  .trust-about-image {
+    min-height: 420px;
+  }
+}

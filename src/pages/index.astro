@@ -1,0 +1,46 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { company } from '../data/site.js';
+import HeroSection from '../components/home/HeroSection.astro';
+import OpportunitySection from '../components/home/OpportunitySection.astro';
+import HowItWorksSection from '../components/home/HowItWorksSection.astro';
+import PlansSection from '../components/home/PlansSection.astro';
+import TrustAboutSection from '../components/home/TrustAboutSection.astro';
+import TestimonialsSection from '../components/home/TestimonialsSection.astro';
+import FaqSection from '../components/home/FaqSection.astro';
+import FinalCtaSection from '../components/home/FinalCtaSection.astro';
+---
+
+<MarketingLayout
+  title={`${company.name} | Inversiones sostenibles`}
+  description={company.about}
+  currentPath="/"
+>
+  <main class="section-stack">
+    <HeroSection />
+    <OpportunitySection />
+    <HowItWorksSection />
+    <PlansSection />
+    <TrustAboutSection />
+    <TestimonialsSection />
+    <FaqSection />
+    <FinalCtaSection />
+  </main>
+
+  <script is:inline>
+    const hero = document.querySelector('[data-hero-section]');
+    const meter = document.querySelector('[data-hero-meter]');
+
+    const updateHeroMeter = () => {
+      if (!hero || !meter) return;
+      const heroHeight = hero.getBoundingClientRect().height;
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const usage = Math.round((heroHeight / viewportHeight) * 100);
+      meter.textContent = `Hero visible: ${usage}% del viewport inicial`;
+      hero.setAttribute('data-hero-usage', String(usage));
+    };
+
+    updateHeroMeter();
+    window.addEventListener('resize', updateHeroMeter);
+  </script>
+</MarketingLayout>

@@ -1,0 +1,41 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { company, plans } from '../data/site.js';
+---
+
+<MarketingLayout
+  title={`Planes de inversion | ${company.name}`}
+  description="Planes de inversion Eco-Basico, Eco-Pro y Eco-Elite con retorno diario y beneficios diferenciales."
+  currentPath="/planes"
+>
+  <main class="section-stack">
+    <section class="page-hero glass-panel">
+      <p class="section-kicker">Planes</p>
+      <h1 class="page-title">Planes de Inversion</h1>
+      <p class="hero-text">
+        En EcoNegocios & Inversiones, ofrecemos diferentes niveles de participacion segun su capital disponible.
+        Todos los planes generan rendimientos diarios automaticos.
+      </p>
+    </section>
+
+    <section class="plan-grid">
+      {plans.map((plan) => (
+        <article class={`plan-card ${plan.accent}`}>
+          <p class="plan-label">{plan.id.toUpperCase()}</p>
+          <h2>{plan.name}</h2>
+          <p>{plan.subtitle}</p>
+          <ul class="spec-list">
+            <li>Rango de inversion: {plan.range}</li>
+            <li>Retorno diario: {plan.dailyReturn}</li>
+            <li>Plazo: {plan.term}</li>
+            <li>Beneficio: {plan.benefit}</li>
+          </ul>
+          <div class="button-row">
+            <a class="primary-button" href="/login">Solicitar acceso</a>
+            <a class="ghost-button" href="/dashboard">Ver demo</a>
+          </div>
+        </article>
+      ))}
+    </section>
+  </main>
+</MarketingLayout>
