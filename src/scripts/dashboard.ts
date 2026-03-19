@@ -76,7 +76,7 @@ function escapeHtml(value: string) {
 
 function getFirebaseErrorMessage(error: unknown) {
   if (error instanceof FirebaseError) {
-    if (error.code === 'storage/unauthorized') return 'No tienes permisos para subir archivos a Storage.';
+    if (error.code === 'storage/unauthorized') return 'No tienes permisos para subir archivos.';
     if (error.code === 'permission-denied' || error.code === 'firestore/permission-denied') return 'No tienes permisos para completar esta accion.';
     if (error.code === 'storage/canceled') return 'La carga del archivo fue cancelada.';
     if (error.code === 'storage/invalid-format') return 'El archivo no tiene un formato valido.';
