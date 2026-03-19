@@ -215,11 +215,11 @@ import '../styles/site.css';
 					</div>
 					<div class="bg-white rounded-2xl p-5 border border-green-100 shadow-sm">
 						<p class="text-xs text-green-600 uppercase tracking-widest font-bold mb-2">Flujo</p>
-						<h3 class="text-lg font-bold text-green-950 mb-4">Como se procesa</h3>
+						<h3 class="text-lg font-bold text-green-950 mb-4">Antes de enviar</h3>
 						<ol class="space-y-3 text-sm text-green-800">
-							<li class="rounded-2xl bg-green-50 border border-green-100 px-4 py-3">1. Subes el comprobante a Firebase Storage.</li>
-							<li class="rounded-2xl bg-green-50 border border-green-100 px-4 py-3">2. Se crea la solicitud en Firestore con estado <strong>pending</strong>.</li>
-							<li class="rounded-2xl bg-green-50 border border-green-100 px-4 py-3">3. El administrador aprueba o rechaza desde su dashboard.</li>
+							<li class="rounded-2xl bg-green-50 border border-green-100 px-4 py-3">1. Verifica que el monto y la referencia sean correctos.</li>
+							<li class="rounded-2xl bg-green-50 border border-green-100 px-4 py-3">2. Adjunta un comprobante legible.</li>
+							<li class="rounded-2xl bg-green-50 border border-green-100 px-4 py-3">3. Revisa el estado del deposito desde tu historial.</li>
 						</ol>
 					</div>
 				</section>
@@ -269,11 +269,11 @@ import '../styles/site.css';
 					</div>
 					<div class="bg-white rounded-2xl p-5 border border-green-100 shadow-sm">
 						<p class="text-xs text-green-600 uppercase tracking-widest font-bold mb-2">Estado</p>
-						<h3 class="text-lg font-bold text-green-950 mb-4">Reglas del retiro</h3>
+						<h3 class="text-lg font-bold text-green-950 mb-4">Antes de solicitar</h3>
 						<ul class="space-y-3 text-sm text-green-800">
-							<li class="rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-3">El retiro se guarda en Firestore con estado <strong>pending</strong>.</li>
-							<li class="rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-3">El admin puede pagarlo o rechazarlo desde la vista administrativa.</li>
-							<li class="rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-3">El balance solo descuenta retiros con estado <strong>paid</strong>.</li>
+							<li class="rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-3">Confirma que los datos bancarios esten actualizados.</li>
+							<li class="rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-3">Revisa el monto antes de enviar la solicitud.</li>
+							<li class="rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-3">Consulta el avance del retiro desde tu historial.</li>
 						</ul>
 					</div>
 				</section>
@@ -331,7 +331,7 @@ import '../styles/site.css';
 				<section id="adminPanel" class="dashboard-section hidden">
 					<div class="mb-4">
 						<h2 class="text-xl font-bold text-gray-900">Panel de administracion</h2>
-						<p class="text-sm text-gray-500">Datos en tiempo real desde Firestore y Storage.</p>
+						<p class="text-sm text-gray-500">Gestion general de transacciones y beneficiarios.</p>
 					</div>
 
 					<div id="adminTransactions" class="admin-tab-content">
@@ -399,7 +399,7 @@ import '../styles/site.css';
 									<p class="text-xs text-gray-500 uppercase tracking-widest font-bold">Admin</p>
 									<h3 class="text-lg font-bold text-gray-900">Beneficiarios registrados</h3>
 								</div>
-								<span class="px-3 py-2 rounded-lg bg-gray-100 text-gray-600 text-sm">Gestionados desde Firestore</span>
+								<span class="px-3 py-2 rounded-lg bg-gray-100 text-gray-600 text-sm">Listado actualizado</span>
 							</div>
 							<div class="overflow-x-auto">
 								<table class="w-full min-w-[820px]">

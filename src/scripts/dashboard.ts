@@ -600,7 +600,7 @@ export function initDashboardPage() {
       return;
     }
 
-    const confirmed = await openConfirm('Confirmar deposito', 'Se cargara el soporte en Firebase Storage y la solicitud ira a Firestore.');
+    const confirmed = await openConfirm('Confirmar deposito', 'Revisa los datos y confirma el envio del deposito.');
     if (!confirmed) return;
 
     if (submitButton) {
@@ -648,7 +648,7 @@ export function initDashboardPage() {
     }
 
     const reference = `${bankName} - ${accountNumber}`;
-    const confirmed = await openConfirm('Confirmar retiro', 'Se registrara la solicitud en Firestore para revision administrativa.');
+    const confirmed = await openConfirm('Confirmar retiro', 'Revisa los datos y confirma la solicitud de retiro.');
     if (!confirmed) return;
 
     if (submitButton) {
