@@ -97,11 +97,17 @@ export function initDashboardPage() {
   const userDropdown = document.querySelector<HTMLElement>('#userDropdown');
   const toastContainer = document.querySelector<HTMLElement>('#toastContainer');
   const confirmModal = document.querySelector<HTMLElement>('#confirmModal');
+  const proofModal = document.querySelector<HTMLElement>('#proofModal');
   const modalTitle = document.querySelector<HTMLElement>('#modalTitle');
   const modalMessage = document.querySelector<HTMLElement>('#modalMessage');
   const modalClose = document.querySelector<HTMLElement>('#modalClose');
   const modalCancel = document.querySelector<HTMLElement>('#modalCancel');
   const modalConfirm = document.querySelector<HTMLElement>('#modalConfirm');
+  const proofModalClose = document.querySelector<HTMLElement>('#proofModalClose');
+  const proofModalLabel = document.querySelector<HTMLElement>('#proofModalLabel');
+  const proofModalImage = document.querySelector<HTMLImageElement>('#proofModalImage');
+  const proofModalFrame = document.querySelector<HTMLIFrameElement>('#proofModalFrame');
+  const proofModalEmpty = document.querySelector<HTMLElement>('#proofModalEmpty');
   const dashboardTitle = document.querySelector<HTMLElement>('#dashboardTitle');
   const investorNav = document.querySelector<HTMLElement>('#investorNav');
   const adminNav = document.querySelector<HTMLElement>('#adminNav');
@@ -187,6 +193,54 @@ export function initDashboardPage() {
       modalResolver(result);
       modalResolver = null;
     }
+  };
+
+  const closeProofModal = () => {
+    proofModal?.classList.add('hidden');
+    proofModal?.classList.remove('flex');
+    if (proofModalImage) {
+      proofModalImage.src = '';
+      proofModalImage.classList.add('hidden');
+    }
+    if (proofModalFrame) {
+      proofModalFrame.src = '';
+      proofModalFrame.classList.add('hidden');
+    }
+    proofModalEmpty?.classList.add('hidden');
+  };
+
+  const openProofModal = (url: string, label: string) => {
+    if (!proofModal) {
+      window.open(url, '_blank', 'noreferrer');
+      return;
+    }
+
+    if (proofModalLabel) proofModalLabel.textContent = label;
+    proofModal.classList.remove('hidden');
+    proofModal.classList.add('flex');
+    proofModalEmpty?.classList.add('hidden');
+
+    const lowerUrl = url.toLowerCase();
+    const isImage = /\.(png|jpe?g|gif|webp|bmp|svg)(\?|$)/.test(lowerUrl) || lowerUrl.startsWith('data:image/');
+    const isPdf = /\.pdf(\?|$)/.test(lowerUrl);
+
+    if (isImage && proofModalImage) {
+      proofModalImage.src = url;
+      proofModalImage.classList.remove('hidden');
+      proofModalImage.onerror = () => {
+        proofModalImage.classList.add('hidden');
+        proofModalEmpty?.classList.remove('hidden');
+      };
+      return;
+    }
+
+    if ((isPdf || !isImage) && proofModalFrame) {
+      proofModalFrame.src = url;
+      proofModalFrame.classList.remove('hidden');
+      return;
+    }
+
+    proofModalEmpty?.classList.remove('hidden');
   };
 
   const closeSidebar = () => {
@@ -445,7 +499,7 @@ export function initDashboardPage() {
             <td class="py-2"><span class="px-1.5 py-0.5 rounded ${status.className} text-xs font-medium">${status.label}</span></td>
             <td class="py-2 text-right ${amountClass} font-semibold text-sm">${escapeHtml(formatCurrency(item.amount))}</td>
             <td class="py-2 text-sm text-gray-600">${typeLabel}</td>
-            <td class="py-2 text-center">${item.proofUrl ? `<a href="${escapeHtml(item.proofUrl)}" class="text-green-700 text-sm font-semibold" target="_blank" rel="noreferrer">Abrir</a>` : '<span class="text-gray-400">-</span>'}</td>
+            <td class="py-2 text-center">${item.proofUrl ? `<button type="button" class="text-green-700 text-sm font-semibold hover:text-green-900" data-proof-url="${escapeHtml(item.proofUrl)}" data-proof-label="${escapeHtml(`${item.userName} - ${item.reference || typeLabel}`)}">Ver</button>` : '<span class="text-gray-400">-</span>'}</td>
             <td class="py-2"><div class="flex justify-end gap-1">${actions.join('') || '<span class="text-gray-400 text-xs">Sin accion</span>'}</div></td>
           </tr>
         `;
@@ -719,6 +773,15 @@ export function initDashboardPage() {
   adminTransactionsBody?.addEventListener('click', async (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement)) return;
+
+    const proofButton = target.closest<HTMLElement>('[data-proof-url]');
+    if (proofButton) {
+      const proofUrl = proofButton.dataset.proofUrl;
+      const proofLabel = proofButton.dataset.proofLabel ?? 'Comprobante';
+      if (proofUrl) openProofModal(proofUrl, proofLabel);
+      return;
+    }
+
     const button = target.closest<HTMLElement>('[data-action][data-id]');
     if (!button) return;
 
@@ -838,8 +901,12 @@ export function initDashboardPage() {
   modalClose?.addEventListener('click', () => closeConfirm(false));
   modalCancel?.addEventListener('click', () => closeConfirm(false));
   modalConfirm?.addEventListener('click', () => closeConfirm(true));
+  proofModalClose?.addEventListener('click', closeProofModal);
   confirmModal?.addEventListener('click', (event) => {
     if (event.target === confirmModal) closeConfirm(false);
+  });
+  proofModal?.addEventListener('click', (event) => {
+    if (event.target === proofModal) closeProofModal();
   });
 
   onAuthStateChanged(auth, async (user) => {

@@ -438,6 +438,25 @@ import '../styles/site.css';
 			</div>
 		</div>
 
+		<div id="proofModal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
+			<div class="bg-white rounded-2xl w-full max-w-4xl shadow-2xl overflow-hidden">
+				<div class="flex items-center justify-between px-5 py-4 border-b border-gray-200">
+					<div>
+						<h3 class="font-bold text-gray-900">Comprobante</h3>
+						<p class="text-sm text-gray-500" id="proofModalLabel">Vista previa</p>
+					</div>
+					<button type="button" class="w-9 h-9 rounded-lg hover:bg-gray-100 text-gray-700" id="proofModalClose"><i class="bi bi-x-lg"></i></button>
+				</div>
+				<div class="p-5">
+					<img id="proofModalImage" class="hidden w-full max-h-[70vh] object-contain rounded-xl border border-gray-200 bg-gray-50" alt="Comprobante" />
+					<iframe id="proofModalFrame" class="hidden w-full h-[70vh] rounded-xl border border-gray-200 bg-gray-50" title="Comprobante"></iframe>
+					<div id="proofModalEmpty" class="hidden rounded-xl border border-dashed border-gray-300 bg-gray-50 px-4 py-10 text-center text-sm text-gray-500">
+						No se pudo mostrar el comprobante.
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<style>
 			.sidebar-btn {
 				padding: 8px 12px;
