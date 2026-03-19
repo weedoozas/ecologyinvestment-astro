@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "astro": "^6.0.5",
-    "chart.js": "^4.5.1"
+    "chart.js": "^4.5.1",
+    "firebase": "^12.10.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.1",

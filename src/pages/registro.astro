@@ -7,9 +7,9 @@ import '../styles/site.css';
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" href="/images/logos/logo-transparent.png" />
-		<title>Iniciar sesion | Eco Negocios e Inversiones</title>
+		<title>Registro | Eco Negocios e Inversiones</title>
 	</head>
-	<body class="min-h-screen flex items-center justify-center relative p-4" style="background: linear-gradient(180deg, rgba(232,250,235,0.88) 0%, rgba(245,252,247,0.96) 100%), url('/images/greenprojects.png') center center/cover no-repeat;" data-page="login" data-auth-mode="login">
+	<body class="min-h-screen flex items-center justify-center relative p-4" style="background: linear-gradient(180deg, rgba(232,250,235,0.88) 0%, rgba(245,252,247,0.96) 100%), url('/images/greenprojects.png') center center/cover no-repeat;" data-page="register" data-auth-mode="register">
 		<div class="absolute inset-0 bg-gradient-to-br from-green-950/10 via-transparent to-emerald-500/10 pointer-events-none"></div>
 		<div class="relative w-full max-w-md">
 			<section class="bg-white/70 backdrop-blur-xl rounded-3xl p-6 md:p-8 shadow-2xl border border-white/30">
@@ -17,29 +17,35 @@ import '../styles/site.css';
 					<img src="/images/logos/logo-transparent.png" alt="Eco Negocios" class="w-20 md:w-24 h-8 md:h-10 object-contain" />
 					<div>
 						<p class="text-xs text-green-600 uppercase tracking-widest font-bold">Firebase Auth</p>
-						<h1 class="text-xl md:text-2xl font-bold text-green-950" id="loginTitle">Iniciar sesion</h1>
+						<h1 class="text-xl md:text-2xl font-bold text-green-950" id="loginTitle">Crear cuenta</h1>
 					</div>
 				</div>
 
-				<div class="hidden" id="loginHelper"></div>
+				<div class="rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-3 text-sm text-emerald-900 mb-5" id="loginHelper">
+					Registrate con tu nombre y correo. Te enviaremos un vinculo seguro y al abrirlo se creara tu perfil como beneficiario.
+				</div>
 
-				<ul class="hidden" id="loginSteps"></ul>
+				<ul class="space-y-3 text-sm text-green-800 mb-5" id="loginSteps">
+					<li class="rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-3">1. Completa tu nombre y correo.</li>
+					<li class="rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-3">2. Recibes un vinculo de acceso sin contrasena.</li>
+					<li class="rounded-2xl bg-emerald-50 border border-emerald-100 px-4 py-3">3. Al abrirlo, activas tu cuenta y entras al dashboard.</li>
+				</ul>
 
 				<form id="loginForm" class="space-y-4">
-					<label class="block hidden" id="nameField">
+					<label class="block" id="nameField">
 						<span class="block text-sm font-bold text-green-900 mb-1">Nombre completo</span>
-						<input type="text" name="name" placeholder="Tu nombre" class="w-full px-4 py-3 rounded-2xl border border-green-200 bg-white/90 text-base" />
+						<input type="text" name="name" placeholder="Tu nombre" class="w-full px-4 py-3 rounded-2xl border border-green-200 bg-white/90 text-base" required />
 					</label>
 					<label class="block">
 						<span class="block text-sm font-bold text-green-900 mb-1">Correo</span>
 						<input type="email" name="email" placeholder="usuario@eco.com" class="w-full px-4 py-3 rounded-2xl border border-green-200 bg-white/90 text-base" required />
 					</label>
-					<button type="submit" class="w-full py-3 rounded-full bg-gradient-to-r from-green-600 to-emerald-400 text-white font-bold shadow-lg">Continuar</button>
+					<button type="submit" class="w-full py-3 rounded-full bg-gradient-to-r from-green-600 to-emerald-400 text-white font-bold shadow-lg">Registrarme con mi correo</button>
 					<p class="text-center text-sm min-h-5 font-medium" id="loginMessage"></p>
 				</form>
 
 				<div class="flex flex-col md:flex-row justify-between mt-5 text-sm gap-2 text-green-700">
-					<a href="/registro" class="hover:text-green-900">Crear cuenta</a>
+					<a href="/login" class="hover:text-green-900">Ya tengo cuenta</a>
 					<a href="/" class="hover:text-green-900">Volver a la landing</a>
 				</div>
 			</section>
