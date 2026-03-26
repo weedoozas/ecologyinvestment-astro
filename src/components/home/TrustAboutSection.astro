@@ -1,41 +1,37 @@
 ---
-import '../../styles/home/trust-about.css';
 ---
 
-<section class="py-12 md:py-16 lg:py-20 px-4 bg-gradient-to-b from-gray-50 to-green-50" data-reveal>
-  <div class="max-w-6xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-      <div>
-        <p class="text-sm text-green-600 uppercase tracking-wider font-bold mb-2">Quiénes somos</p>
-        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Sobre Eco Negocios & Inversiones</h2>
-        <div class="space-y-4 text-gray-600">
-          <p>Eco Negocios & Inversiones es una plataforma de gestión de activos dedicada a conectar el capital privado con proyectos de infraestructura de energía renovable en todo el mundo. Creemos que el crecimiento económico debe ir de la mano con el cuidado del medio ambiente.</p>
-          <p><strong>Nuestra Misión:</strong> Democratizar el acceso a inversiones de alto rendimiento mediante el financiamiento de plantas solares y parques eólicos.</p>
-          <p><strong>Seguridad y Confianza:</strong> Operamos con total transparencia en la gestión de capitales, garantizando que cada dólar invertido contribuya a un planeta más limpio y a una billetera más sólida para nuestros usuarios.</p>
-        </div>
-        <a href="/sobre-nosotros" class="inline-block mt-4 md:mt-6 px-6 py-3 rounded-full border border-green-200 bg-white text-green-700 font-semibold hover:bg-green-50 transition">Conocer más</a>
+<section class="rounded-[2rem] border border-emerald-100 bg-gradient-to-b from-slate-50 to-emerald-50 px-6 py-12 shadow-[0_24px_60px_rgba(12,23,15,0.06)] md:px-10 md:py-16" data-reveal>
+  <div class="grid gap-8 lg:grid-cols-2 lg:gap-12">
+    <div>
+      <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-700">Quienes somos</p>
+      <h2 class="mb-5 [font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-3xl font-extrabold leading-none tracking-[-0.04em] text-slate-950 md:text-4xl">
+        Sobre Eco Negocios & Inversiones
+      </h2>
+      <div class="space-y-4 text-sm leading-8 text-slate-600 md:text-base">
+        <p>Eco Negocios & Inversiones es una plataforma de gestion de activos dedicada a conectar el capital privado con proyectos de infraestructura de energia renovable en todo el mundo. Creemos que el crecimiento economico debe ir de la mano con el cuidado del medio ambiente.</p>
+        <p><strong class="text-slate-900">Nuestra Mision:</strong> Democratizar el acceso a inversiones de alto rendimiento mediante el financiamiento de plantas solares y parques eolicos.</p>
+        <p><strong class="text-slate-900">Seguridad y Confianza:</strong> Operamos con total transparencia en la gestion de capitales, garantizando que cada dolar invertido contribuya a un planeta mas limpio y a una billetera mas solida para nuestros usuarios.</p>
       </div>
+      <a href="/sobre-nosotros" class="mt-8 inline-flex items-center justify-center rounded-full border border-emerald-200 bg-white px-6 py-3 text-sm font-bold text-emerald-800 transition hover:bg-emerald-50">
+        Conocer mas
+      </a>
+    </div>
 
-      <div class="relative rounded-2xl overflow-hidden h-full min-h-[400px] lg:min-h-[500px]">
-        <img src="/images/solar_project.jpg" alt="Proyecto solar sostenible" class="absolute inset-0 w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent p-5 md:p-6 flex flex-col justify-end">
-          <p class="text-green-300 text-sm font-bold uppercase tracking-wider mb-2">Confianza</p>
-          <h3 class="text-white text-xl md:text-2xl font-bold mb-3">Transparencia, compromiso y visión de futuro</h3>
-          <p class="text-gray-200 text-sm mb-4">Nuestro enfoque se basa en conectar capital con proyectos reales y sostenibles, priorizando la transparencia, la trazabilidad y el impacto ambiental positivo.</p>
-          <div class="space-y-2">
-            <div class="flex items-center gap-2 text-white text-sm">
-              <i class="bi bi-lightning-charge text-green-300"></i>
-              <span>Proyectos enfocados en energías renovables</span>
-            </div>
-            <div class="flex items-center gap-2 text-white text-sm">
-              <i class="bi bi-recycle text-green-300"></i>
-              <span>Modelo basado en economía sostenible</span>
-            </div>
-            <div class="flex items-center gap-2 text-white text-sm">
-              <i class="bi bi-pc-display-horizontal text-green-300"></i>
-              <span>Plataforma digital de seguimiento</span>
-            </div>
-          </div>
+    <div class="relative min-h-[420px] overflow-hidden rounded-[1.75rem] shadow-[0_24px_60px_rgba(12,23,15,0.12)]">
+      <img src="/images/solar_project.jpg" alt="Proyecto solar sostenible" class="absolute inset-0 h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-transparent p-6 md:p-8 flex flex-col justify-end">
+        <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-300">Confianza</p>
+        <h3 class="max-w-xl [font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-2xl font-extrabold leading-tight tracking-[-0.03em] text-white md:text-3xl">
+          Transparencia, compromiso y vision de futuro
+        </h3>
+        <p class="mt-4 text-sm leading-7 text-emerald-50/85 md:text-base">
+          Nuestro enfoque se basa en conectar capital con proyectos reales y sostenibles, priorizando la transparencia, la trazabilidad y el impacto ambiental positivo.
+        </p>
+        <div class="mt-6 grid gap-3 text-sm text-white/90">
+          <div class="flex items-center gap-3"><i class="bi bi-lightning-charge text-emerald-300"></i><span>Proyectos enfocados en energias renovables</span></div>
+          <div class="flex items-center gap-3"><i class="bi bi-recycle text-emerald-300"></i><span>Modelo basado en economia sostenible</span></div>
+          <div class="flex items-center gap-3"><i class="bi bi-pc-display-horizontal text-emerald-300"></i><span>Plataforma digital de seguimiento</span></div>
         </div>
       </div>
     </div>

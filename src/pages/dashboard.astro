@@ -12,11 +12,11 @@ import '../styles/site.css';
 	</head>
 	<body class="bg-gradient-to-br from-green-50 to-emerald-100 min-h-screen" data-page="dashboard">
 		<div class="flex min-h-screen">
-			<aside class="w-64 bg-gradient-to-b from-green-950 to-green-900 border-r border-green-800/30 fixed h-full flex flex-col p-4 gap-4 -translate-x-full md:translate-x-0 z-50" id="dashxSidebar">
+			<aside class="fixed z-50 flex h-full w-[17.5rem] -translate-x-full flex-col gap-4 overflow-y-auto border-r border-green-800/30 bg-gradient-to-b from-green-950 to-green-900 p-4 shadow-2xl transition-transform duration-200 md:w-64 md:translate-x-0 md:shadow-none" id="dashxSidebar">
 				<div class="flex items-center justify-between">
 					<a href="/" class="flex items-center gap-3">
 						<img src="/images/logos/logo-transparent.png" alt="Eco Negocios" class="w-9 h-9" />
-						<div class="hidden md:block">
+						<div>
 							<span class="block text-xs text-green-300 uppercase tracking-widest">Eco Negocios</span>
 							<strong class="block text-white">Dashboard</strong>
 						</div>
@@ -26,16 +26,16 @@ import '../styles/site.css';
 					</button>
 				</div>
 
-				<nav class="flex flex-col gap-2 mt-4 hidden" id="investorNav">
-					<a href="#overview" class="sidebar-btn active" data-target="overview"><i class="bi bi-grid-1x2 mr-2"></i><span class="hidden md:inline">Resumen</span></a>
-					<a href="#deposits" class="sidebar-btn" data-target="deposits"><i class="bi bi-plus-circle mr-2"></i><span class="hidden md:inline">Deposito</span></a>
-					<a href="#withdrawals" class="sidebar-btn" data-target="withdrawals"><i class="bi bi-arrow-up-circle mr-2"></i><span class="hidden md:inline">Retiro</span></a>
+				<nav class="mt-4 hidden flex-col gap-2" id="investorNav">
+					<a href="#overview" class="sidebar-btn active flex items-center rounded-xl bg-white/15 px-3 py-3 text-left text-sm text-white transition hover:bg-white/20" data-target="overview"><i class="bi bi-grid-1x2 mr-3"></i><span>Resumen</span></a>
+					<a href="#deposits" class="sidebar-btn flex items-center rounded-xl bg-white/5 px-3 py-3 text-left text-sm text-white/90 transition hover:bg-white/10" data-target="deposits"><i class="bi bi-plus-circle mr-3"></i><span>Deposito</span></a>
+					<a href="#withdrawals" class="sidebar-btn flex items-center rounded-xl bg-white/5 px-3 py-3 text-left text-sm text-white/90 transition hover:bg-white/10" data-target="withdrawals"><i class="bi bi-arrow-up-circle mr-3"></i><span>Retiro</span></a>
 				</nav>
 
-				<nav class="flex flex-col gap-2 mt-4 hidden" id="adminNav">
-					<button type="button" class="sidebar-btn active" data-admin-tab="transactions"><i class="bi bi-receipt mr-2"></i><span class="hidden md:inline">Transacciones</span></button>
-					<button type="button" class="sidebar-btn" data-admin-tab="graphics"><i class="bi bi-graph-up mr-2"></i><span class="hidden md:inline">Graficos</span></button>
-					<button type="button" class="sidebar-btn" data-admin-tab="beneficiaries"><i class="bi bi-people mr-2"></i><span class="hidden md:inline">Beneficiarios</span></button>
+				<nav class="mt-4 hidden flex-col gap-2" id="adminNav">
+					<button type="button" class="sidebar-btn active flex items-center rounded-xl bg-white/15 px-3 py-3 text-left text-sm text-white transition hover:bg-white/20" data-admin-tab="transactions"><i class="bi bi-receipt mr-3"></i><span>Transacciones</span></button>
+					<button type="button" class="sidebar-btn flex items-center rounded-xl bg-white/5 px-3 py-3 text-left text-sm text-white/90 transition hover:bg-white/10" data-admin-tab="graphics"><i class="bi bi-graph-up mr-3"></i><span>Graficos</span></button>
+					<button type="button" class="sidebar-btn flex items-center rounded-xl bg-white/5 px-3 py-3 text-left text-sm text-white/90 transition hover:bg-white/10" data-admin-tab="beneficiaries"><i class="bi bi-people mr-3"></i><span>Beneficiarios</span></button>
 				</nav>
 
 				<div class="mt-auto space-y-3">
@@ -44,22 +44,22 @@ import '../styles/site.css';
 						<strong class="block text-sm mt-1" id="sidebarUserName">Cargando...</strong>
 						<span class="text-xs text-white/70" id="sidebarUserRole">Sincronizando rol</span>
 					</div>
-					<button type="button" class="sidebar-btn w-full" id="goProfile"><i class="bi bi-person-circle mr-2"></i><span class="hidden md:inline">Mi perfil</span></button>
-					<button type="button" class="sidebar-btn w-full" id="logoutButton"><i class="bi bi-box-arrow-right mr-2"></i><span class="hidden md:inline">Cerrar sesion</span></button>
+					<button type="button" class="sidebar-btn flex w-full items-center rounded-xl bg-white/5 px-3 py-3 text-left text-sm text-white/90 transition hover:bg-white/10" id="goProfile"><i class="bi bi-person-circle mr-3"></i><span>Mi perfil</span></button>
+					<button type="button" class="sidebar-btn flex w-full items-center rounded-xl bg-white/5 px-3 py-3 text-left text-sm text-white/90 transition hover:bg-white/10" id="logoutButton"><i class="bi bi-box-arrow-right mr-3"></i><span>Cerrar sesion</span></button>
 				</div>
 			</aside>
 
-			<div class="fixed inset-0 bg-black/20 z-40 hidden md:hidden" id="dashxOverlay"></div>
+			<div class="fixed inset-0 bg-slate-950/45 z-40 hidden md:hidden backdrop-blur-[1px]" id="dashxOverlay"></div>
 
 			<main class="flex-1 md:ml-64 p-4 md:p-6 w-full">
-				<header class="flex items-center justify-between mb-4 md:mb-6">
+				<header class="mb-4 flex items-center justify-between gap-3 md:mb-6">
 					<div class="flex items-center gap-3">
 						<button type="button" class="md:hidden w-10 h-10 rounded-lg bg-white border border-green-200 shadow flex items-center justify-center text-green-900" id="mobileMenuBtn">
 							<i class="bi bi-list text-xl"></i>
 						</button>
 						<div>
 							<p class="text-xs text-green-600 uppercase tracking-widest font-bold">Cuenta</p>
-							<h1 class="text-lg md:text-xl font-bold text-green-900" id="dashboardTitle">Cargando dashboard</h1>
+							<h1 class="text-base md:text-xl font-bold text-green-900" id="dashboardTitle">Cargando dashboard</h1>
 						</div>
 					</div>
 					<div class="flex items-center gap-2 md:gap-3">
@@ -456,28 +456,6 @@ import '../styles/site.css';
 				</div>
 			</div>
 		</div>
-
-		<style>
-			.sidebar-btn {
-				padding: 8px 12px;
-				border-radius: 10px;
-				background: rgba(255, 255, 255, 0.05);
-				color: #f4fbfc;
-				font-size: 0.78rem;
-				cursor: pointer;
-				text-align: left;
-				border: none;
-				transition: background 0.15s;
-			}
-
-			.sidebar-btn:hover {
-				background: rgba(255, 255, 255, 0.1);
-			}
-
-			.sidebar-btn.active {
-				background: rgba(95, 177, 121, 0.3);
-			}
-		</style>
 
 		<script>
 			import { initDashboardPage } from '../scripts/dashboard';

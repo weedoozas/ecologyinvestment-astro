@@ -8,36 +8,37 @@ import { company } from '../data/site.js';
   description={company.about}
   currentPath="/sobre-nosotros"
 >
-  <main class="section-stack">
-    <section class="page-hero glass-panel">
-      <p class="section-kicker">Sobre nosotros</p>
-      <h1 class="page-title">Quienes somos</h1>
-      <p class="hero-text">{company.about}</p>
-      <div class="info-hero-media">
-        <img src="/images/wind-farm.jpg" alt="Parque eolico de referencia" class="about-hero-photo" />
+  <main class="grid gap-6 pb-14 md:gap-8 md:pb-16">
+    <section class="rounded-[2rem] border border-white/70 bg-white/85 px-6 py-12 shadow-[0_24px_60px_rgba(12,23,15,0.06)] backdrop-blur-xl md:px-10 md:py-14">
+      <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-700">Sobre nosotros</p>
+      <h1 class="[font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-4xl font-extrabold leading-none tracking-[-0.04em] text-slate-950 md:text-5xl">
+        Quienes somos
+      </h1>
+      <p class="mt-5 max-w-4xl text-base leading-8 text-slate-600 md:text-lg">{company.about}</p>
+      <div class="mt-8 overflow-hidden rounded-[1.75rem] shadow-lg">
+        <img src="/images/wind-farm.jpg" alt="Parque eolico de referencia" class="h-72 w-full object-cover md:h-96" />
       </div>
     </section>
 
-    <section class="info-grid">
-      <article class="info-card">
-        <img src="/images/illustrations/graph-up-arrow.svg" alt="Crecimiento" class="section-icon" />
-        <p class="section-kicker">Nuestra mision</p>
-        <h2>Democratizar el acceso a inversiones de alto rendimiento.</h2>
-        <p>{company.mission}</p>
+    <section class="grid gap-5 lg:grid-cols-3">
+      <article class="rounded-[1.75rem] bg-white p-6 shadow-sm">
+        <img src="/images/illustrations/graph-up-arrow.svg" alt="Crecimiento" class="mb-5 h-14 w-14 rounded-2xl border border-emerald-100 bg-white p-3 shadow-sm" />
+        <p class="mb-2 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-700">Nuestra mision</p>
+        <h2 class="[font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-2xl font-bold text-slate-950">Democratizar el acceso a inversiones de alto rendimiento.</h2>
+        <p class="mt-4 text-sm leading-7 text-slate-600">{company.mission}</p>
       </article>
-      <article class="info-card feature-card tint">
-        <img src="/images/illustrations/shield-check.svg" alt="Seguridad" class="section-icon" />
-        <p class="section-kicker">Seguridad y confianza</p>
-        <h2>Transparencia en la gestion de capitales.</h2>
-        <p>{company.trust}</p>
+      <article class="rounded-[1.75rem] bg-gradient-to-br from-emerald-50 to-cyan-50 p-6 shadow-sm">
+        <img src="/images/illustrations/shield-check.svg" alt="Seguridad" class="mb-5 h-14 w-14 rounded-2xl border border-emerald-100 bg-white p-3 shadow-sm" />
+        <p class="mb-2 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-700">Seguridad y confianza</p>
+        <h2 class="[font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-2xl font-bold text-slate-950">Transparencia en la gestion de capitales.</h2>
+        <p class="mt-4 text-sm leading-7 text-slate-600">{company.trust}</p>
       </article>
-      <article class="info-card">
-        <img src="/images/illustrations/wind.svg" alt="Parques eolicos" class="section-icon" />
-        <p class="section-kicker">Enfoque</p>
-        <h2>Plantas solares y parques eolicos.</h2>
-        <p>
-          Nuestra narrativa y estructura comercial se enfocan en proyectos que combinan crecimiento economico
-          con impacto positivo para el medio ambiente.
+      <article class="rounded-[1.75rem] bg-white p-6 shadow-sm">
+        <img src="/images/illustrations/wind.svg" alt="Parques eolicos" class="mb-5 h-14 w-14 rounded-2xl border border-emerald-100 bg-white p-3 shadow-sm" />
+        <p class="mb-2 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-700">Enfoque</p>
+        <h2 class="[font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-2xl font-bold text-slate-950">Plantas solares y parques eolicos.</h2>
+        <p class="mt-4 text-sm leading-7 text-slate-600">
+          Nuestra narrativa y estructura comercial se enfocan en proyectos que combinan crecimiento economico con impacto positivo para el medio ambiente.
         </p>
       </article>
     </section>

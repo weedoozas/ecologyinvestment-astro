@@ -1,55 +1,71 @@
 ---
-import '../../styles/home/plans.css';
+import { plansUrl } from '../../data/site.js';
+
+const planCards = [
+  {
+    icon: 'tree-fill',
+    label: 'Eco-Basico (VIP 1)',
+    range: '$40 - $200 USD',
+    returnText: '25% Diario',
+    points: ['Acceso inicial al portafolio', 'Panel de seguimiento incluido'],
+    featured: false,
+  },
+  {
+    icon: 'bar-chart-fill',
+    label: 'Eco-Pro (VIP 2)',
+    range: '$400 - $800 USD',
+    returnText: '25% Diario',
+    points: ['Mayor participacion en proyectos', 'Prioridad en nuevos proyectos'],
+    featured: true,
+  },
+  {
+    icon: 'shield-check',
+    label: 'Eco-Elite (VIP 3)',
+    range: '$1500 - $3000 USD',
+    returnText: '25% Diario',
+    points: ['Oportunidades exclusivas', 'Soporte personalizado'],
+    featured: false,
+  },
+];
 ---
 
-<section class="section-stack section-block section-plans-band relative overflow-hidden" data-reveal>
-  <div class="plans-atmosphere" aria-hidden="true">
-    <span class="wind-streak wind-streak-1"></span>
-    <span class="wind-streak wind-streak-2"></span>
-    <span class="wind-streak wind-streak-3"></span>
+<section class="relative overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_top_right,rgba(143,216,255,0.14),transparent_22%),radial-gradient(circle_at_bottom_left,rgba(126,240,188,0.16),transparent_26%),linear-gradient(180deg,#0a5b54_0%,#0f7a64_52%,#106e62_100%)] px-6 py-12 text-white shadow-[0_24px_60px_rgba(12,23,15,0.14)] md:px-10 md:py-16" data-reveal>
+  <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+    <span class="absolute left-[-10%] top-[18%] h-0.5 w-[28%] animate-[pulse_12s_linear_infinite] rounded-full bg-gradient-to-r from-transparent via-emerald-100/80 to-transparent opacity-40"></span>
+    <span class="absolute left-[-18%] top-[36%] h-0.5 w-[36%] animate-[pulse_14s_linear_infinite] rounded-full bg-gradient-to-r from-transparent via-emerald-50/80 to-transparent opacity-40"></span>
+    <span class="absolute left-[-12%] top-[62%] h-0.5 w-[24%] animate-[pulse_11s_linear_infinite] rounded-full bg-gradient-to-r from-transparent via-emerald-100/80 to-transparent opacity-30"></span>
   </div>
 
-  <div class="section-heading narrow text-center mb-8">
-    <p class="section-kicker">Planes de inversión</p>
-    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">Planes diseñados para distintos niveles de inversión</h2>
-  </div>
+  <div class="relative mx-auto max-w-6xl">
+    <div class="mb-10 text-center md:mb-12">
+      <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-200">Planes de inversion</p>
+      <h2 class="mx-auto max-w-3xl [font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-3xl font-extrabold leading-none tracking-[-0.04em] md:text-4xl">
+        Planes disenados para distintos niveles de inversion
+      </h2>
+    </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-    <article class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-white">
-      <i class="bi bi-tree-fill text-3xl mb-4 block"></i>
-      <p class="text-sm text-green-200 uppercase tracking-wider font-bold mb-2">Eco-Básico (VIP 1)</p>
-      <h3 class="text-xl md:text-2xl font-bold mb-2">$40 - $200 USD</h3>
-      <p class="text-lg text-green-300 font-bold mb-4">25% Diario</p>
-      <ul class="space-y-2 mb-6 text-sm text-gray-200">
-        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Acceso inicial al portafolio</li>
-        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Panel de seguimiento incluido</li>
-      </ul>
-      <a class="block text-center px-6 py-3 bg-green-500 hover:bg-green-600 rounded-full font-bold text-white transition" href="/planes">Elegir plan</a>
-    </article>
-
-    <article class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border-2 border-green-400 text-white relative md:-mt-4 md:mb-4">
-      <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">Más popular</span>
-      <i class="bi bi-bar-chart-fill text-3xl mb-4 block"></i>
-      <p class="text-sm text-green-200 uppercase tracking-wider font-bold mb-2">Eco-Pro (VIP 2)</p>
-      <h3 class="text-xl md:text-2xl font-bold mb-2">$400 - $800 USD</h3>
-      <p class="text-lg text-green-300 font-bold mb-4">25% Diario</p>
-      <ul class="space-y-2 mb-6 text-sm text-gray-200">
-        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Mayor participación en proyectos</li>
-        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Prioridad en nuevos proyectos</li>
-      </ul>
-      <a class="block text-center px-6 py-3 bg-green-400 hover:bg-green-500 rounded-full font-bold text-gray-900 transition" href="/planes">Elegir plan</a>
-    </article>
-
-    <article class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-white">
-      <i class="bi bi-shield-check text-3xl mb-4 block"></i>
-      <p class="text-sm text-green-200 uppercase tracking-wider font-bold mb-2">Eco-Elite (VIP 3)</p>
-      <h3 class="text-xl md:text-2xl font-bold mb-2">$1500 - $3000 USD</h3>
-      <p class="text-lg text-green-300 font-bold mb-4">25% Diario</p>
-      <ul class="space-y-2 mb-6 text-sm text-gray-200">
-        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Oportunidades exclusivas</li>
-        <li class="flex items-center gap-2"><i class="bi bi-check-circle text-green-300"></i> Soporte personalizado</li>
-      </ul>
-      <a class="block text-center px-6 py-3 bg-green-500 hover:bg-green-600 rounded-full font-bold text-white transition" href="/planes">Elegir plan</a>
-    </article>
+    <div class="grid gap-6 lg:grid-cols-3">
+      {planCards.map((plan) => (
+        <article class={`relative rounded-[1.75rem] border p-6 backdrop-blur-md ${plan.featured ? 'border-emerald-300 bg-white/20 shadow-[0_24px_60px_rgba(0,0,0,0.18)] lg:-translate-y-3' : 'border-white/15 bg-white/10 shadow-[0_18px_40px_rgba(0,0,0,0.12)]'}`}>
+          {plan.featured && (
+            <span class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-300 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.12em] text-slate-900">
+              Mas popular
+            </span>
+          )}
+          <i class={`bi bi-${plan.icon} mb-5 block text-3xl ${plan.featured ? 'text-emerald-100' : 'text-emerald-200'}`}></i>
+          <p class="mb-2 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-200">{plan.label}</p>
+          <h3 class="[font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-3xl font-extrabold tracking-[-0.04em]">{plan.range}</h3>
+          <p class="mt-3 text-lg font-bold text-emerald-200">{plan.returnText}</p>
+          <ul class="mt-6 space-y-3 text-sm leading-7 text-emerald-50/90">
+            {plan.points.map((point) => (
+              <li class="flex items-start gap-3"><i class="bi bi-check-circle mt-1 text-emerald-200"></i><span>{point}</span></li>
+            ))}
+          </ul>
+          <a class={`mt-8 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-bold transition ${plan.featured ? 'bg-emerald-300 text-slate-900 hover:bg-emerald-200' : 'bg-emerald-500 text-white hover:bg-emerald-400'}`} href={plansUrl}>
+            Elegir plan
+          </a>
+        </article>
+      ))}
+    </div>
   </div>
 </section>

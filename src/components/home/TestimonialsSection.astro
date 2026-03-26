@@ -1,46 +1,46 @@
 ---
-import '../../styles/home/testimonials.css';
-
 const testimonials = [
   {
     name: 'Carlos M.',
     image: '/images/testimonials/youngman.png',
     quote:
-      'Al principio tenía dudas, pero después de activar mi primer plan de $100, empecé a ver los intereses del 3.0% en mi saldo cada mañana sin falta. Ya he realizado tres retiros exitosos directamente a mi cuenta. Es una excelente forma de hacer crecer los ahorros mientras apoyamos la energía limpia.'
+      'Al principio tenia dudas, pero despues de activar mi primer plan de $100, empece a ver los intereses del 3.0% en mi saldo cada manana sin falta. Ya he realizado tres retiros exitosos directamente a mi cuenta. Es una excelente forma de hacer crecer los ahorros mientras apoyamos la energia limpia.',
   },
   {
     name: 'Elena R.',
     image: '/images/testimonials/girl.png',
     quote:
-      'Lo que más me gusta de EcoNegocios es la transparencia. El panel de usuario es muy fácil de usar y puedo ver cómo mi capital genera rendimientos diarios. Empecé con el mínimo de $10 y ahora ya estoy reinvirtiendo mis ganancias para subir de nivel.'
+      'Lo que mas me gusta de EcoNegocios es la transparencia. El panel de usuario es muy facil de usar y puedo ver como mi capital genera rendimientos diarios. Empece con el minimo de $10 y ahora ya estoy reinvirtiendo mis ganancias para subir de nivel.',
   },
   {
     name: 'Jorge L.',
     image: '/images/testimonials/man.jpg',
     quote:
-      'He probado muchas plataformas, pero ninguna con la solidez de EcoNegocios. Saber que mi dinero está respaldado por proyectos de paneles solares reales me da la tranquilidad que buscaba. El soporte al cliente es rápido y los pagos son puntuales.'
-  }
+      'He probado muchas plataformas, pero ninguna con la solidez de EcoNegocios. Saber que mi dinero esta respaldado por proyectos de paneles solares reales me da la tranquilidad que buscaba. El soporte al cliente es rapido y los pagos son puntuales.',
+  },
 ];
 ---
 
-<section class="py-12 md:py-16 lg:py-20 px-4 bg-white" data-reveal>
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-8 md:mb-12">
-      <p class="text-sm text-green-600 uppercase tracking-wider font-bold mb-2">Testimonios</p>
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Experiencias reales de personas que ya confiaron en la plataforma</h2>
+<section class="rounded-[2rem] bg-white px-6 py-12 shadow-[0_24px_60px_rgba(12,23,15,0.05)] md:px-10 md:py-16" data-reveal>
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-10 text-center md:mb-12">
+      <p class="mb-2 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-700">Testimonios</p>
+      <h2 class="mx-auto max-w-4xl [font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-3xl font-extrabold leading-none tracking-[-0.04em] text-slate-950 md:text-4xl">
+        Experiencias reales de personas que ya confiaron en la plataforma
+      </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       {testimonials.map((item) => (
-        <article class="bg-gradient-to-b from-white to-green-50 rounded-2xl p-5 md:p-6 shadow-lg border border-green-100">
-          <div class="flex items-center gap-3 mb-4">
-            <img src={item.image} alt={item.name} class="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-green-200" />
+        <article class="rounded-[1.75rem] border border-emerald-100 bg-gradient-to-b from-white to-emerald-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+            <img src={item.image} alt={item.name} class="h-14 w-14 rounded-full border-2 border-emerald-200 object-cover" />
             <div>
-              <strong class="block text-gray-900">{item.name}</strong>
-              <span class="text-sm text-gray-500">Inversor activo</span>
+              <strong class="block text-slate-950">{item.name}</strong>
+              <span class="text-sm text-slate-500">Inversor activo</span>
             </div>
           </div>
-          <p class="text-gray-600 text-sm md:text-base leading-relaxed">{item.quote}</p>
+          <p class="text-sm leading-7 text-slate-600 md:text-base">{item.quote}</p>
         </article>
       ))}
     </div>

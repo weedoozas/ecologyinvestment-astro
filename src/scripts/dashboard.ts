@@ -88,7 +88,6 @@ function getFirebaseErrorMessage(error: unknown) {
 }
 
 export function initDashboardPage() {
-  const body = document.body;
   const overlay = document.querySelector<HTMLElement>('#dashxOverlay');
   const sidebar = document.querySelector<HTMLElement>('#dashxSidebar');
   const sidebarToggle = document.querySelector<HTMLElement>('#sidebarToggle');
@@ -163,6 +162,14 @@ export function initDashboardPage() {
   let performanceChart: Chart | null = null;
   let adminChart: Chart | null = null;
   const itemsPerPage = 5;
+
+  const setSidebarButtonState = (button: HTMLElement, active: boolean) => {
+    button.classList.toggle('active', active);
+    button.classList.toggle('bg-white/15', active);
+    button.classList.toggle('text-white', active);
+    button.classList.toggle('bg-white/5', !active);
+    button.classList.toggle('text-white/90', !active);
+  };
 
   const showToast = (message: string, tone: 'info' | 'success' | 'error' = 'info') => {
     if (!toastContainer) return;
@@ -244,13 +251,15 @@ export function initDashboardPage() {
   };
 
   const closeSidebar = () => {
-    body.classList.remove('sidebar-open');
+    sidebar?.classList.add('-translate-x-full');
+    sidebar?.classList.remove('translate-x-0');
     overlay?.classList.add('hidden');
     overlay?.classList.remove('flex');
   };
 
   const toggleSidebar = () => {
-    body.classList.toggle('sidebar-open');
+    sidebar?.classList.toggle('-translate-x-full');
+    sidebar?.classList.toggle('translate-x-0');
     overlay?.classList.toggle('hidden');
     overlay?.classList.toggle('flex');
   };
@@ -258,13 +267,13 @@ export function initDashboardPage() {
   const setActiveInvestorNav = (section: Exclude<DashboardSection, 'admin'>) => {
     investorLinks.forEach((link) => {
       const isActive = link.dataset.target === section;
-      link.classList.toggle('active', isActive);
+      setSidebarButtonState(link, isActive);
     });
   };
 
   const setActiveAdminTab = (tab: 'transactions' | 'graphics' | 'beneficiaries') => {
     adminTabButtons.forEach((button) => {
-      button.classList.toggle('active', button.dataset.adminTab === tab);
+      setSidebarButtonState(button, button.dataset.adminTab === tab);
     });
 
     adminTabSections.forEach((section) => section.classList.add('hidden'));

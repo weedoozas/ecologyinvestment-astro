@@ -1,26 +1,52 @@
 ---
-import '../../styles/home/hero.css';
+import { plansUrl } from '../../data/site.js';
 ---
 
-<section class="hero-section section-block section-hero md:bg-gradient-to-r md:from-green-50 md:to-emerald-100" data-hero-section data-reveal>
-  <div class="hero-copy hero-copy-wide max-w-2xl">
-    <p class="section-kicker">Eco-inversiones globales</p>
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Invierte en energía sostenible y haz crecer tu capital con impacto real</h1>
-    <p class="hero-text text-base md:text-lg text-gray-600 mb-6">
-      Participa en proyectos de energía renovable y accede a oportunidades de inversión
-      diseñadas para generar valor económico y ambiental.
-    </p>
-    <div class="button-row flex flex-col sm:flex-row gap-3">
-      <a class="primary-button inline-block text-center px-6 py-3" href="/planes">Empezar a invertir</a>
-      <a class="secondary-button inline-block text-center px-6 py-3" href="#como-funciona">Ver cómo funciona</a>
+<section
+  class="relative overflow-hidden rounded-[2rem] border border-white/60 bg-[radial-gradient(circle_at_top_left,rgba(15,138,108,0.12),transparent_24%),linear-gradient(90deg,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.92)_28%,rgba(255,255,255,0.5)_52%,rgba(255,255,255,0.08)_70%),url('/images/earth.png')] bg-cover bg-center px-6 py-12 shadow-[0_24px_60px_rgba(12,23,15,0.08)] md:px-10 md:py-16"
+  data-hero-section
+  data-reveal
+>
+  <div class="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:items-end">
+    <div class="max-w-3xl">
+      <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-700">Eco-inversiones globales</p>
+      <h1 class="mb-5 max-w-[14ch] [font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-4xl font-extrabold leading-none tracking-[-0.04em] text-slate-950 md:text-5xl lg:text-6xl">
+        Invierte en energia sostenible y haz crecer tu capital con impacto real
+      </h1>
+      <p class="max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
+        Participa en proyectos de energia renovable y accede a oportunidades de inversion disenadas para generar valor economico y ambiental.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-700 to-teal-500 px-6 py-3 text-sm font-bold text-white shadow-[0_18px_38px_rgba(16,103,124,0.24)] transition hover:-translate-y-0.5" href={plansUrl}>
+          Empezar a invertir
+        </a>
+        <a class="inline-flex items-center justify-center rounded-full border border-emerald-100 bg-white/85 px-6 py-3 text-sm font-bold text-slate-700 transition hover:bg-white" href="#como-funciona">
+          Ver como funciona
+        </a>
+      </div>
+    </div>
+
+    <div class="grid gap-4 self-stretch">
+      <div class="overflow-hidden rounded-[1.75rem] border border-white/60 bg-[linear-gradient(145deg,#083c42_0%,#0f8a6c_44%,#1567a8_100%)] shadow-[0_24px_60px_rgba(12,23,15,0.12)]">
+        <img src="/images/greenprojects.png" alt="Proyecto sostenible" class="h-72 w-full object-cover md:h-96" />
+      </div>
+      <div class="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+        <div class="rounded-3xl border border-emerald-100 bg-white/90 p-4 shadow-sm">
+          <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-emerald-700">Impacto</p>
+          <strong class="mt-2 block [font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-2xl font-bold text-slate-950">Energia limpia</strong>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Capital orientado a infraestructura con narrativa ambiental clara.</p>
+        </div>
+        <div class="rounded-3xl border border-emerald-100 bg-white/90 p-4 shadow-sm">
+          <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-emerald-700">Seguimiento</p>
+          <strong class="mt-2 block [font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-2xl font-bold text-slate-950">Panel digital</strong>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Consulta movimientos, estados y resultados desde una sola cuenta.</p>
+        </div>
+        <div class="rounded-3xl border border-emerald-100 bg-white/90 p-4 shadow-sm">
+          <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-emerald-700">Escala</p>
+          <strong class="mt-2 block [font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-2xl font-bold text-slate-950">Planes flexibles</strong>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Opciones para perfiles de entrada, crecimiento y capital mas alto.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  @media (max-width: 768px) {
-    .section-hero {
-      background: linear-gradient(180deg, rgba(232, 250, 235, 0.85) 0%, rgba(232, 250, 235, 0.85) 100%), url('/images/greenprojects.png') center center/cover no-repeat !important;
-    }
-  }
-</style>

@@ -1,56 +1,55 @@
 ---
-import '../../styles/home/faq.css';
+const faqs = [
+  {
+    icon: 'cash-coin',
+    number: '01',
+    question: 'Como se generan mis ganancias diarias?',
+    answer:
+      'Sus beneficios provienen del financiamiento directo que EcoNegocios realiza en proyectos de energia renovable (solar y eolica). El flujo de caja generado por la venta de energia limpia se distribuye proporcionalmente entre nuestros socios inversores de forma automatica cada 24 horas.',
+    open: true,
+  },
+  {
+    icon: 'wallet2',
+    number: '02',
+    question: 'Cual es el monto minimo para invertir y retirar?',
+    answer:
+      'Puede comenzar a invertir desde $10.00 USD activando el Plan Eco-Basico. Los retiros de ganancias pueden solicitarse en cualquier momento una vez alcanzado el minimo establecido en su panel de usuario, y se procesan directamente a su cuenta bancaria registrada.',
+  },
+  {
+    icon: 'shield-check',
+    number: '03',
+    question: 'Que tan seguras son mis inversiones en la plataforma?',
+    answer:
+      'Priorizamos la transparencia y la seguridad financiera. Al estar respaldados por activos fisicos reales (infraestructura energetica), su capital cuenta con un sustento tangible que garantiza la sostenibilidad del retorno de inversion a largo plazo.',
+  },
+];
 ---
 
-<section class="py-12 md:py-16 lg:py-20 px-4 bg-gradient-to-b from-green-50 to-white" data-reveal>
-  <div class="max-w-3xl mx-auto">
-    <div class="text-center mb-8 md:mb-12">
-      <p class="text-sm text-green-600 uppercase tracking-wider font-bold mb-2">FAQ</p>
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Preguntas frecuentes</h2>
+<section class="rounded-[2rem] border border-emerald-100 bg-gradient-to-b from-emerald-50 to-white px-6 py-12 shadow-[0_24px_60px_rgba(12,23,15,0.05)] md:px-10 md:py-16" data-reveal>
+  <div class="mx-auto max-w-4xl">
+    <div class="mb-10 text-center md:mb-12">
+      <p class="mb-2 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-700">FAQ</p>
+      <h2 class="[font-family:'Plus_Jakarta_Sans',Manrope,sans-serif] text-3xl font-extrabold leading-none tracking-[-0.04em] text-slate-950 md:text-4xl">
+        Preguntas frecuentes
+      </h2>
     </div>
 
-    <div class="space-y-3 md:space-y-4">
-      <details class="faq-accordion bg-white rounded-xl md:rounded-2xl shadow-md border border-green-100 overflow-hidden" open>
-        <summary class="flex items-center gap-3 md:gap-4 p-4 md:p-5 cursor-pointer list-none">
-          <span class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-700 flex-shrink-0">
-            <i class="bi bi-cash-coin"></i>
-          </span>
-          <span class="text-green-600 font-bold text-xs flex-shrink-0">01</span>
-          <span class="font-semibold text-gray-900 flex-1 text-sm md:text-base">¿Cómo se generan mis ganancias diarias?</span>
-          <i class="bi bi-chevron-down text-green-600 flex-shrink-0"></i>
-        </summary>
-        <div class="px-4 md:px-5 pb-4 md:pb-5">
-          <p class="text-gray-600 text-sm md:text-base">Sus beneficios provienen del financiamiento directo que EcoNegocios realiza en proyectos de energía renovable (solar y eólica). El flujo de caja generado por la venta de energía limpia se distribuye proporcionalmente entre nuestros socios inversores de forma automática cada 24 horas.</p>
-        </div>
-      </details>
-
-      <details class="faq-accordion bg-white rounded-xl md:rounded-2xl shadow-md border border-green-100 overflow-hidden">
-        <summary class="flex items-center gap-3 md:gap-4 p-4 md:p-5 cursor-pointer list-none">
-          <span class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-700 flex-shrink-0">
-            <i class="bi bi-wallet2"></i>
-          </span>
-          <span class="text-green-600 font-bold text-xs flex-shrink-0">02</span>
-          <span class="font-semibold text-gray-900 flex-1 text-sm md:text-base">¿Cuál es el monto mínimo para invertir y retirar?</span>
-          <i class="bi bi-chevron-down text-green-600 flex-shrink-0"></i>
-        </summary>
-        <div class="px-4 md:px-5 pb-4 md:pb-5">
-          <p class="text-gray-600 text-sm md:text-base">Puede comenzar a invertir desde $10.00 USD activando el Plan Eco-Básico. Los retiros de ganancias pueden solicitarse en cualquier momento una vez alcanzado el mínimo establecido en su panel de usuario, y se procesan directamente a su cuenta bancaria registrada.</p>
-        </div>
-      </details>
-
-      <details class="faq-accordion bg-white rounded-xl md:rounded-2xl shadow-md border border-green-100 overflow-hidden">
-        <summary class="flex items-center gap-3 md:gap-4 p-4 md:p-5 cursor-pointer list-none">
-          <span class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-700 flex-shrink-0">
-            <i class="bi bi-shield-check"></i>
-          </span>
-          <span class="text-green-600 font-bold text-xs flex-shrink-0">03</span>
-          <span class="font-semibold text-gray-900 flex-1 text-sm md:text-base">¿Qué tan seguras son mis inversiones en la plataforma?</span>
-          <i class="bi bi-chevron-down text-green-600 flex-shrink-0"></i>
-        </summary>
-        <div class="px-4 md:px-5 pb-4 md:pb-5">
-          <p class="text-gray-600 text-sm md:text-base">Priorizamos la transparencia y la seguridad financiera. Al estar respaldados por activos físicos reales (infraestructura energética), su capital cuenta con un sustento tangible que garantiza la sostenibilidad del retorno de inversión a largo plazo.</p>
-        </div>
-      </details>
+    <div class="space-y-4">
+      {faqs.map((item) => (
+        <details class="group overflow-hidden rounded-[1.5rem] border border-emerald-100 bg-white shadow-sm open:shadow-md" open={item.open}>
+          <summary class="flex cursor-pointer list-none items-center gap-4 p-5">
+            <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-800">
+              <i class={`bi bi-${item.icon}`}></i>
+            </span>
+            <span class="text-xs font-extrabold uppercase tracking-[0.18em] text-emerald-700">{item.number}</span>
+            <span class="flex-1 text-sm font-semibold text-slate-950 md:text-base">{item.question}</span>
+            <i class="bi bi-chevron-down text-emerald-700 transition group-open:rotate-180"></i>
+          </summary>
+          <div class="px-5 pb-5 pt-0 text-sm leading-7 text-slate-600 md:text-base">
+            <p>{item.answer}</p>
+          </div>
+        </details>
+      ))}
     </div>
   </div>
 </section>

@@ -45,7 +45,16 @@ export function initLoginPage() {
   const setMessage = (text: string, tone: 'error' | 'success' | 'info' = 'info') => {
     if (!message) return;
     message.textContent = text;
-    message.className = `text-center text-sm min-h-5 font-medium ${tone === 'error' ? 'text-red-500' : tone === 'success' ? 'text-emerald-600' : 'text-green-700'}`;
+    if (!text) {
+      message.className = 'hidden rounded-2xl px-4 py-3 text-sm font-semibold';
+      return;
+    }
+
+    message.className = `block rounded-2xl px-4 py-3 text-sm font-semibold ${tone === 'error'
+      ? 'border border-red-200 bg-red-50 text-red-700'
+      : tone === 'success'
+        ? 'border border-emerald-200 bg-emerald-50 text-emerald-700'
+        : 'border border-sky-200 bg-sky-50 text-sky-700'}`;
   };
 
   const setFormLoading = (loading: boolean) => {

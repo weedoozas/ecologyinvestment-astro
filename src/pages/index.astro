@@ -16,7 +16,7 @@ import FinalCtaSection from '../components/home/FinalCtaSection.astro';
   description={company.about}
   currentPath="/"
 >
-  <main class="section-stack">
+  <main class="grid gap-6 pb-14 md:gap-8 md:pb-16">
     <HeroSection />
     <OpportunitySection />
     <HowItWorksSection />
@@ -29,14 +29,11 @@ import FinalCtaSection from '../components/home/FinalCtaSection.astro';
 
   <script is:inline>
     const hero = document.querySelector('[data-hero-section]');
-    const meter = document.querySelector('[data-hero-meter]');
-
     const updateHeroMeter = () => {
-      if (!hero || !meter) return;
+      if (!hero) return;
       const heroHeight = hero.getBoundingClientRect().height;
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
       const usage = Math.round((heroHeight / viewportHeight) * 100);
-      meter.textContent = `Hero visible: ${usage}% del viewport inicial`;
       hero.setAttribute('data-hero-usage', String(usage));
     };
 
