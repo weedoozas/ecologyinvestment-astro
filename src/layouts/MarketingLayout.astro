@@ -41,8 +41,8 @@ const navLinkActive = 'bg-white text-emerald-700 shadow-sm ring-1 ring-emerald-1
     <meta name="description" content={description} />
   </head>
   <body class="min-h-screen bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(255,255,255,0.98)),url('https://images.pexels.com/photos/7130537/pexels-photo-7130537.jpeg?auto=compress&cs=tinysrgb&w=1600')] bg-cover bg-fixed bg-top text-slate-950 [font-family:Manrope,Segoe_UI,sans-serif]">
-    <header class="sticky top-0 z-30 border-b border-white/50 bg-white/80 backdrop-blur-xl" data-site-header>
-      <div class="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-3 md:px-6 lg:px-8">
+    <header class="sticky top-0 z-30 bg-white/80 backdrop-blur-xl" data-site-header>
+      <div class="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-2 md:px-6 lg:px-8">
         <a class="shrink-0" href="/">
           <img src="/images/logos/logo-transparent.png" alt={company.name} class="h-auto w-36 object-contain md:w-40" />
         </a>
@@ -69,9 +69,6 @@ const navLinkActive = 'bg-white text-emerald-700 shadow-sm ring-1 ring-emerald-1
           </nav>
 
           <div class="flex items-center gap-3">
-            <a class="text-sm font-semibold text-slate-600 transition hover:text-emerald-700" href={plansUrl}>
-              Ver planes
-            </a>
             <a
               class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-700 to-teal-500 px-5 py-2.5 text-sm font-bold text-white shadow-[0_18px_38px_rgba(16,103,124,0.24)] transition hover:-translate-y-0.5"
               href="/login"
@@ -92,7 +89,6 @@ const navLinkActive = 'bg-white text-emerald-700 shadow-sm ring-1 ring-emerald-1
               {item.label}
             </a>
           ))}
-          <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700" href={plansUrl}>Ver planes</a>
           <a
             class="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-700 to-teal-500 px-5 py-3 text-sm font-bold text-white"
             href="/login"
@@ -101,9 +97,11 @@ const navLinkActive = 'bg-white text-emerald-700 shadow-sm ring-1 ring-emerald-1
           </a>
         </nav>
       </div>
+
+      <div class="h-[2px] w-full bg-gradient-to-r from-emerald-200 via-emerald-500 to-teal-400"></div>
     </header>
 
-    <div class="mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-7xl flex-col px-4 pb-0 pt-6 md:px-6 lg:px-8">
+    <div class="mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-7xl flex-col px-4 pb-0 pt-0 md:px-6 lg:px-8">
       <slot />
 
       <a
@@ -116,29 +114,32 @@ const navLinkActive = 'bg-white text-emerald-700 shadow-sm ring-1 ring-emerald-1
         <img src="/images/illustrations/whatsapp.svg" alt="WhatsApp" class="h-6 w-6 brightness-0 invert" />
       </a>
 
-      <footer class="mt-14 grid gap-8 rounded-t-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top_right,rgba(95,177,121,0.14),transparent_22%),radial-gradient(circle_at_bottom_left,rgba(75,139,95,0.12),transparent_24%),linear-gradient(180deg,#223f2b_0%,#356444_100%)] px-6 py-10 text-white md:grid-cols-2 md:px-8">
-        <div>
-          <img src="/images/logos/logo-transparent.png" alt={company.name} class="mb-4 h-auto w-40" />
-          <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-emerald-200">Contacto</p>
-          <div class="space-y-2 text-sm text-emerald-50/90">
-            <p>{company.location}</p>
-            <p>{company.phone}</p>
-            <p>{company.email}</p>
+      <footer class="relative mx-[calc(50%-50vw)] mt-14 bg-[radial-gradient(circle_at_top_right,rgba(95,177,121,0.14),transparent_22%),radial-gradient(circle_at_bottom_left,rgba(75,139,95,0.12),transparent_24%),linear-gradient(180deg,#223f2b_0%,#356444_100%)] text-white">
+        <div class="mx-auto grid max-w-7xl gap-8 px-6 py-10 md:grid-cols-2 md:px-8">
+          <div>
+            <img src="/images/logos/logo-transparent.png" alt={company.name} class="mb-4 h-auto w-40" />
+            <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-emerald-200">Contacto</p>
+            <div class="space-y-2 text-sm text-emerald-50/90">
+              <p>{company.location}</p>
+              <p>{company.phone}</p>
+              <p>{company.email}</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-emerald-200">Navegacion</p>
-          <div class="grid gap-2 text-sm text-emerald-50/90">
-            <a href="/">Inicio</a>
-            <a href={plansUrl}>Planes</a>
-            <a href="/contacto">Contacto</a>
+          <div>
+            <p class="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-emerald-200">Navegacion</p>
+            <div class="grid gap-2 text-sm text-emerald-50/90">
+              <a href="/">Inicio</a>
+              <a href={plansUrl}>Planes</a>
+              <a href="/contacto">Contacto</a>
+            </div>
           </div>
         </div>
       </footer>
 
-      <div class="bg-neutral-950 px-4 py-4 text-center text-sm text-white">
-        2026 Eco Negocios & Inversiones. Todos los derechos reservados.
-      </div>
+    </div>
+
+    <div class="relative mx-[calc(50%-50vw)] bg-neutral-950 px-4 py-4 text-center text-sm text-white">
+      2026 Eco Negocios & Inversiones. Todos los derechos reservados.
     </div>
 
     <script is:inline>

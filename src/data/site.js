@@ -45,7 +45,7 @@ export const company = {
   location: 'Ecuador'
 };
 
-export const plansUrl = 'https://ecologyinvestment-astro.vercel.app/planes';
+export const plansUrl = 'https://ecologyinvestment-astro.vercel.app/#planes';
 
 export const metrics = [
   { value: '3', label: 'niveles de participacion escalables' },
